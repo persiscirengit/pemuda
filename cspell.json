@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en-US",
+  "ignorePaths": [
+    "node_modules/**",
+    ".next/**",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "messages/id-ID.json",
+    ".git/**",
+    "*.tsbuildinfo",
+    "**/*.tsbuildinfo"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "org-terms",
+      "path": "./cspell-org-terms.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["org-terms"]
+}
