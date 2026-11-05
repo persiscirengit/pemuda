@@ -40,3 +40,5 @@ qrcode
 yudiel
 varchar
 checkin
+cmdk
+vaul

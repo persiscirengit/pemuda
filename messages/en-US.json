@@ -41,5 +41,23 @@
     "notifications": "Notifications",
     "settings": "Settings",
     "profile": "Profile"
+  },
+  "table": {
+    "noResults": "No results found",
+    "rowsPerPage": "Rows per page",
+    "page": "Page",
+    "of": "of",
+    "totalRows": "total rows",
+    "firstPage": "Go to first page",
+    "previousPage": "Go to previous page",
+    "nextPage": "Go to next page",
+    "lastPage": "Go to last page"
+  },
+  "dialog": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "emptyState": {
+    "noData": "No data available"
   }
 }
