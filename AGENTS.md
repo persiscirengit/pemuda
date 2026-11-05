@@ -22,5 +22,7 @@ All code must satisfy `pnpm check` (`pnpm check:guardrails` via `scripts/guardra
 
 ## Documentation Map
 
-Consult [docs/README.md](docs/README.md) for Diataxis guides, ADRs, domain glossaries, and architecture conventions.
+- [Documentation Map](docs/README.md): Index of Diataxis guides, ADRs, and runbooks.
+- [Architecture Conventions](docs/reference/architecture-conventions.md): DAL contracts, schema conventions, and UI standards.
+- [Agent Environment Setup](docs/how-to/agent-environment-setup.md): Environment setup for superpowers and context7 MCP.
 <!-- END:nextjs-agent-rules -->

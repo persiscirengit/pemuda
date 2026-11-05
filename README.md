@@ -48,4 +48,10 @@ corepack pnpm dev
 
 ## Documentation
 
-Comprehensive project documentation is organized using the Diataxis framework inside the `docs/` directory. See [docs/README.md](docs/README.md) for guides, ADRs, and architecture references.
+Comprehensive project documentation is organized using the Diataxis framework inside the `docs/` directory:
+
+- [Documentation Map](docs/README.md): Index of all project documentation.
+- [Agent Environment Setup](docs/how-to/agent-environment-setup.md): One-time setup guide for AI coding agents.
+- [Local Development Guide](docs/how-to/local-development.md): Environment variables, database setup, and local workflow.
+- [Architecture Conventions](docs/reference/architecture-conventions.md): Target folder structure, DAL, and UI guidelines.
+- [Domain Glossary](docs/reference/domain-glossary.md): Canonical entity and role definitions in US English.
