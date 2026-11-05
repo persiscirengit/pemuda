@@ -38,3 +38,5 @@ uuidv4
 frontmatter
 qrcode
 yudiel
+varchar
+checkin
