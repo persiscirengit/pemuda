@@ -30,6 +30,10 @@ We enforce strict secret isolation and environment configuration standards:
 4. **Zero Hardcoded Identity:**
    - Organization name, branding, and contact details must be loaded from `SystemSettings` or configuration constants, never hardcoded into components.
 
+5. **No Real Data in the Repository:**
+   - This repository is public. Seeders contain system data only (permissions, starter roles, default settings). Tests and fixtures use clearly fake sample data.
+   - Real members, credentials, and organization details exist only in the database or untracked env files, never in code, seeds, fixtures, docs, commits, or PRs.
+
 ## Consequences
 
 - Fail-fast environment validation at build and start time: missing configuration is surfaced immediately.
