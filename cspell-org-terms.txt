@@ -35,3 +35,6 @@ supabase
 luxon
 uuidv
 uuidv4
+frontmatter
+qrcode
+yudiel

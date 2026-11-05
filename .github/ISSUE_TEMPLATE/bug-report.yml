@@ -1,0 +1,37 @@
+name: Bug Report
+description: File a bug report or regression finding
+title: "fix: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Please provide reproducible details in US English (`en-US`).
+  - type: input
+    id: summary
+    attributes:
+      label: Bug Summary
+      description: Brief one-line summary of the bug.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Clear step-by-step instructions to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have happened.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually occurred, including logs or error output.
+    validations:
+      required: true

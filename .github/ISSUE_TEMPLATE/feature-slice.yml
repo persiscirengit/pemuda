@@ -1,0 +1,30 @@
+name: Feature Slice
+description: Propose a new feature slice or vertical capability
+title: "feat: "
+labels: ["feature", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for submitting a feature slice proposal. Please ensure all specifications are clear and in US English (`en-US`).
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Brief one-line description of the feature slice.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Acceptance Criteria
+      description: Detailed acceptance criteria and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: architecture
+    attributes:
+      label: Architecture and Dependencies
+      description: Mention relevant domain, schema, packages (@latest), and permissions.
+    validations:
+      required: false
