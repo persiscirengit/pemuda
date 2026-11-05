@@ -7,5 +7,6 @@ coverage/
 next-env.d.ts
 public/uploads/
 .superpowers/
+.vitest/
 .env*
 !.env.example
