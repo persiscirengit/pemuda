@@ -1,0 +1,45 @@
+{
+  "common": {
+    "appName": "Pemuda",
+    "organizationName": "Pemuda Persis Cirengit",
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "search": "Search",
+      "filter": "Filter",
+      "export": "Export",
+      "import": "Import",
+      "back": "Back",
+      "close": "Close"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "loading": "Loading",
+      "error": "Error",
+      "success": "Success"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign In",
+    "loginSubtitle": "Enter your credentials to access your account",
+    "emailOrNpaLabel": "Email or NPA",
+    "passwordLabel": "Password",
+    "signInButton": "Sign In",
+    "signOutButton": "Sign Out",
+    "forgotPassword": "Forgot Password?"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "organization": "Organization",
+    "members": "Members",
+    "activities": "Activities",
+    "finance": "Finance",
+    "content": "Content",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "profile": "Profile"
+  }
+}

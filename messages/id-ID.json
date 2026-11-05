@@ -1,0 +1,45 @@
+{
+  "common": {
+    "appName": "Pemuda",
+    "organizationName": "Pemuda Persis Cirengit",
+    "actions": {
+      "save": "Simpan",
+      "cancel": "Batal",
+      "edit": "Ubah",
+      "delete": "Hapus",
+      "search": "Cari",
+      "filter": "Saring",
+      "export": "Ekspor",
+      "import": "Impor",
+      "back": "Kembali",
+      "close": "Tutup"
+    },
+    "status": {
+      "active": "Aktif",
+      "inactive": "Nonaktif",
+      "loading": "Memuat",
+      "error": "Galat",
+      "success": "Berhasil"
+    }
+  },
+  "auth": {
+    "loginTitle": "Masuk",
+    "loginSubtitle": "Masukkan kredensial Anda untuk mengakses akun",
+    "emailOrNpaLabel": "Email atau NPA",
+    "passwordLabel": "Kata Sandi",
+    "signInButton": "Masuk",
+    "signOutButton": "Keluar",
+    "forgotPassword": "Lupa Kata Sandi?"
+  },
+  "navigation": {
+    "dashboard": "Dasbor",
+    "organization": "Organisasi",
+    "members": "Anggota",
+    "activities": "Kegiatan",
+    "finance": "Keuangan",
+    "content": "Konten",
+    "notifications": "Notifikasi",
+    "settings": "Pengaturan",
+    "profile": "Profil"
+  }
+}
