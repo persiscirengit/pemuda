@@ -1,0 +1,252 @@
+export const PERMISSIONS = {
+  // Auth & System Administration
+  AUTH_USERS_READ: "auth.users.read",
+  AUTH_USERS_MANAGE: "auth.users.manage",
+  AUTH_ROLES_READ: "auth.roles.read",
+  AUTH_ROLES_MANAGE: "auth.roles.manage",
+  AUTH_PERMISSIONS_READ: "auth.permissions.read",
+
+  // Organization Domain
+  ORGANIZATION_DEPARTMENTS_READ: "organization.departments.read",
+  ORGANIZATION_DEPARTMENTS_MANAGE: "organization.departments.manage",
+  ORGANIZATION_POSITIONS_READ: "organization.positions.read",
+  ORGANIZATION_POSITIONS_MANAGE: "organization.positions.manage",
+  ORGANIZATION_MEMBERS_READ: "organization.members.read",
+  ORGANIZATION_MEMBERS_CREATE: "organization.members.create",
+  ORGANIZATION_MEMBERS_UPDATE: "organization.members.update",
+  ORGANIZATION_MEMBERS_DELETE: "organization.members.delete",
+  ORGANIZATION_MEMBERS_IMPORT: "organization.members.import",
+  ORGANIZATION_MEMBERS_EXPORT: "organization.members.export",
+  ORGANIZATION_MEMBERS_ACCOUNTS: "organization.members.accounts",
+  ORGANIZATION_SETTINGS_READ: "organization.settings.read",
+  ORGANIZATION_SETTINGS_MANAGE: "organization.settings.manage",
+
+  // Activities Domain
+  ACTIVITIES_LOCATIONS_READ: "activities.locations.read",
+  ACTIVITIES_LOCATIONS_MANAGE: "activities.locations.manage",
+  ACTIVITIES_SCHEDULES_READ: "activities.schedules.read",
+  ACTIVITIES_SCHEDULES_MANAGE: "activities.schedules.manage",
+  ACTIVITIES_SCHEDULES_GENERATE: "activities.schedules.generate",
+  ACTIVITIES_EVENTS_READ: "activities.events.read",
+  ACTIVITIES_EVENTS_CREATE: "activities.events.create",
+  ACTIVITIES_EVENTS_UPDATE: "activities.events.update",
+  ACTIVITIES_EVENTS_DELETE: "activities.events.delete",
+  ACTIVITIES_EVENTS_STATUS: "activities.events.status",
+  ACTIVITIES_ATTENDANCE_READ: "activities.attendance.read",
+  ACTIVITIES_ATTENDANCE_MANAGE: "activities.attendance.manage",
+  ACTIVITIES_ATTENDANCE_VERIFY: "activities.attendance.verify",
+  ACTIVITIES_ATTENDANCE_EXPORT: "activities.attendance.export",
+  ACTIVITIES_CHECKIN_SELF: "activities.checkin.self",
+
+  // Finance Domain
+  FINANCE_CATEGORIES_READ: "finance.categories.read",
+  FINANCE_CATEGORIES_MANAGE: "finance.categories.manage",
+  FINANCE_TRANSACTIONS_READ: "finance.transactions.read",
+  FINANCE_TRANSACTIONS_CREATE: "finance.transactions.create",
+  FINANCE_TRANSACTIONS_UPDATE: "finance.transactions.update",
+  FINANCE_TRANSACTIONS_DELETE: "finance.transactions.delete",
+  FINANCE_REPORTS_READ: "finance.reports.read",
+  FINANCE_FEES_READ: "finance.fees.read",
+  FINANCE_FEES_MANAGE: "finance.fees.manage",
+  FINANCE_FEES_GENERATE: "finance.fees.generate",
+  FINANCE_FEES_SELF: "finance.fees.self",
+
+  // Content Domain
+  CONTENT_CATEGORIES_READ: "content.categories.read",
+  CONTENT_CATEGORIES_MANAGE: "content.categories.manage",
+  CONTENT_ARTICLES_READ: "content.articles.read",
+  CONTENT_ARTICLES_CREATE: "content.articles.create",
+  CONTENT_ARTICLES_UPDATE: "content.articles.update",
+  CONTENT_ARTICLES_DELETE: "content.articles.delete",
+  CONTENT_ARTICLES_PUBLISH: "content.articles.publish",
+
+  // Notifications Domain
+  NOTIFICATIONS_BROADCASTS_READ: "notifications.broadcasts.read",
+  NOTIFICATIONS_BROADCASTS_CREATE: "notifications.broadcasts.create",
+  NOTIFICATIONS_BROADCASTS_SEND: "notifications.broadcasts.send",
+  NOTIFICATIONS_INBOX_SELF: "notifications.inbox.self",
+  NOTIFICATIONS_PREFERENCES_SELF: "notifications.preferences.self",
+  NOTIFICATIONS_PUSH_SELF: "notifications.push.self",
+  NOTIFICATIONS_CRON_TRIGGER: "notifications.cron.trigger",
+} as const;
+
+export type PermissionKey = (typeof PERMISSIONS)[keyof typeof PERMISSIONS];
+
+export interface StarterRoleDefinition {
+  name: string;
+  description: string;
+  permissions: readonly PermissionKey[];
+}
+
+export const STARTER_ROLE_NAMES = [
+  "super_admin",
+  "chairperson",
+  "secretary",
+  "treasurer",
+  "member",
+] as const;
+
+export type StarterRoleName = (typeof STARTER_ROLE_NAMES)[number];
+
+export const STARTER_ROLES: Record<StarterRoleName, StarterRoleDefinition> = {
+  super_admin: {
+    name: "super_admin",
+    description: "System administrator with unrestricted operational authority",
+    permissions: Object.values(PERMISSIONS),
+  },
+  chairperson: {
+    name: "chairperson",
+    description:
+      "Executive leader overseeing operations, activities, and reporting",
+    permissions: [
+      PERMISSIONS.AUTH_USERS_READ,
+      PERMISSIONS.ORGANIZATION_DEPARTMENTS_READ,
+      PERMISSIONS.ORGANIZATION_DEPARTMENTS_MANAGE,
+      PERMISSIONS.ORGANIZATION_POSITIONS_READ,
+      PERMISSIONS.ORGANIZATION_POSITIONS_MANAGE,
+      PERMISSIONS.ORGANIZATION_MEMBERS_READ,
+      PERMISSIONS.ORGANIZATION_MEMBERS_CREATE,
+      PERMISSIONS.ORGANIZATION_MEMBERS_UPDATE,
+      PERMISSIONS.ORGANIZATION_MEMBERS_EXPORT,
+      PERMISSIONS.ORGANIZATION_SETTINGS_READ,
+      PERMISSIONS.ORGANIZATION_SETTINGS_MANAGE,
+      PERMISSIONS.ACTIVITIES_LOCATIONS_READ,
+      PERMISSIONS.ACTIVITIES_LOCATIONS_MANAGE,
+      PERMISSIONS.ACTIVITIES_SCHEDULES_READ,
+      PERMISSIONS.ACTIVITIES_SCHEDULES_MANAGE,
+      PERMISSIONS.ACTIVITIES_SCHEDULES_GENERATE,
+      PERMISSIONS.ACTIVITIES_EVENTS_READ,
+      PERMISSIONS.ACTIVITIES_EVENTS_CREATE,
+      PERMISSIONS.ACTIVITIES_EVENTS_UPDATE,
+      PERMISSIONS.ACTIVITIES_EVENTS_STATUS,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_READ,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_MANAGE,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_VERIFY,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_EXPORT,
+      PERMISSIONS.ACTIVITIES_CHECKIN_SELF,
+      PERMISSIONS.FINANCE_CATEGORIES_READ,
+      PERMISSIONS.FINANCE_TRANSACTIONS_READ,
+      PERMISSIONS.FINANCE_REPORTS_READ,
+      PERMISSIONS.FINANCE_FEES_READ,
+      PERMISSIONS.FINANCE_FEES_SELF,
+      PERMISSIONS.CONTENT_CATEGORIES_READ,
+      PERMISSIONS.CONTENT_CATEGORIES_MANAGE,
+      PERMISSIONS.CONTENT_ARTICLES_READ,
+      PERMISSIONS.CONTENT_ARTICLES_CREATE,
+      PERMISSIONS.CONTENT_ARTICLES_UPDATE,
+      PERMISSIONS.CONTENT_ARTICLES_PUBLISH,
+      PERMISSIONS.NOTIFICATIONS_BROADCASTS_READ,
+      PERMISSIONS.NOTIFICATIONS_BROADCASTS_CREATE,
+      PERMISSIONS.NOTIFICATIONS_BROADCASTS_SEND,
+      PERMISSIONS.NOTIFICATIONS_INBOX_SELF,
+      PERMISSIONS.NOTIFICATIONS_PREFERENCES_SELF,
+      PERMISSIONS.NOTIFICATIONS_PUSH_SELF,
+    ],
+  },
+  secretary: {
+    name: "secretary",
+    description:
+      "Administrative secretary managing rosters, content, and events",
+    permissions: [
+      PERMISSIONS.AUTH_USERS_READ,
+      PERMISSIONS.ORGANIZATION_DEPARTMENTS_READ,
+      PERMISSIONS.ORGANIZATION_DEPARTMENTS_MANAGE,
+      PERMISSIONS.ORGANIZATION_POSITIONS_READ,
+      PERMISSIONS.ORGANIZATION_POSITIONS_MANAGE,
+      PERMISSIONS.ORGANIZATION_MEMBERS_READ,
+      PERMISSIONS.ORGANIZATION_MEMBERS_CREATE,
+      PERMISSIONS.ORGANIZATION_MEMBERS_UPDATE,
+      PERMISSIONS.ORGANIZATION_MEMBERS_DELETE,
+      PERMISSIONS.ORGANIZATION_MEMBERS_IMPORT,
+      PERMISSIONS.ORGANIZATION_MEMBERS_EXPORT,
+      PERMISSIONS.ORGANIZATION_MEMBERS_ACCOUNTS,
+      PERMISSIONS.ORGANIZATION_SETTINGS_READ,
+      PERMISSIONS.ACTIVITIES_LOCATIONS_READ,
+      PERMISSIONS.ACTIVITIES_LOCATIONS_MANAGE,
+      PERMISSIONS.ACTIVITIES_SCHEDULES_READ,
+      PERMISSIONS.ACTIVITIES_SCHEDULES_MANAGE,
+      PERMISSIONS.ACTIVITIES_SCHEDULES_GENERATE,
+      PERMISSIONS.ACTIVITIES_EVENTS_READ,
+      PERMISSIONS.ACTIVITIES_EVENTS_CREATE,
+      PERMISSIONS.ACTIVITIES_EVENTS_UPDATE,
+      PERMISSIONS.ACTIVITIES_EVENTS_DELETE,
+      PERMISSIONS.ACTIVITIES_EVENTS_STATUS,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_READ,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_MANAGE,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_VERIFY,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_EXPORT,
+      PERMISSIONS.ACTIVITIES_CHECKIN_SELF,
+      PERMISSIONS.FINANCE_FEES_SELF,
+      PERMISSIONS.CONTENT_CATEGORIES_READ,
+      PERMISSIONS.CONTENT_CATEGORIES_MANAGE,
+      PERMISSIONS.CONTENT_ARTICLES_READ,
+      PERMISSIONS.CONTENT_ARTICLES_CREATE,
+      PERMISSIONS.CONTENT_ARTICLES_UPDATE,
+      PERMISSIONS.CONTENT_ARTICLES_DELETE,
+      PERMISSIONS.CONTENT_ARTICLES_PUBLISH,
+      PERMISSIONS.NOTIFICATIONS_BROADCASTS_READ,
+      PERMISSIONS.NOTIFICATIONS_BROADCASTS_CREATE,
+      PERMISSIONS.NOTIFICATIONS_BROADCASTS_SEND,
+      PERMISSIONS.NOTIFICATIONS_INBOX_SELF,
+      PERMISSIONS.NOTIFICATIONS_PREFERENCES_SELF,
+      PERMISSIONS.NOTIFICATIONS_PUSH_SELF,
+    ],
+  },
+  treasurer: {
+    name: "treasurer",
+    description:
+      "Treasurer managing organizational finance, dues, and ledger records",
+    permissions: [
+      PERMISSIONS.ORGANIZATION_DEPARTMENTS_READ,
+      PERMISSIONS.ORGANIZATION_POSITIONS_READ,
+      PERMISSIONS.ORGANIZATION_MEMBERS_READ,
+      PERMISSIONS.ORGANIZATION_MEMBERS_EXPORT,
+      PERMISSIONS.ORGANIZATION_SETTINGS_READ,
+      PERMISSIONS.ACTIVITIES_EVENTS_READ,
+      PERMISSIONS.ACTIVITIES_ATTENDANCE_READ,
+      PERMISSIONS.ACTIVITIES_CHECKIN_SELF,
+      PERMISSIONS.FINANCE_CATEGORIES_READ,
+      PERMISSIONS.FINANCE_CATEGORIES_MANAGE,
+      PERMISSIONS.FINANCE_TRANSACTIONS_READ,
+      PERMISSIONS.FINANCE_TRANSACTIONS_CREATE,
+      PERMISSIONS.FINANCE_TRANSACTIONS_UPDATE,
+      PERMISSIONS.FINANCE_TRANSACTIONS_DELETE,
+      PERMISSIONS.FINANCE_REPORTS_READ,
+      PERMISSIONS.FINANCE_FEES_READ,
+      PERMISSIONS.FINANCE_FEES_MANAGE,
+      PERMISSIONS.FINANCE_FEES_GENERATE,
+      PERMISSIONS.FINANCE_FEES_SELF,
+      PERMISSIONS.NOTIFICATIONS_INBOX_SELF,
+      PERMISSIONS.NOTIFICATIONS_PREFERENCES_SELF,
+      PERMISSIONS.NOTIFICATIONS_PUSH_SELF,
+    ],
+  },
+  member: {
+    name: "member",
+    description: "Standard active member with self-service capabilities",
+    permissions: [
+      PERMISSIONS.ACTIVITIES_CHECKIN_SELF,
+      PERMISSIONS.FINANCE_FEES_SELF,
+      PERMISSIONS.NOTIFICATIONS_INBOX_SELF,
+      PERMISSIONS.NOTIFICATIONS_PREFERENCES_SELF,
+      PERMISSIONS.NOTIFICATIONS_PUSH_SELF,
+    ],
+  },
+} as const;
+
+export interface RoleWithPermissions {
+  name: string;
+  permissions: readonly string[] | string[];
+}
+
+export function resolveUserPermissions(
+  assignedRoles: readonly RoleWithPermissions[],
+): string[] {
+  const permissionSet = new Set<string>();
+  for (const role of assignedRoles) {
+    for (const perm of role.permissions) {
+      permissionSet.add(perm);
+    }
+  }
+  return Array.from(permissionSet);
+}
