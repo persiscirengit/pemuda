@@ -10,24 +10,35 @@ This guide establishes the collaboration workflow for the 3 core contributors an
 
 ## Development Lifecycle
 
-### Step 1: Branch Creation
+### Step 1: Assign Issue & Post Kickoff Comment
 
-Create a branch named after the assigned issue:
+All work begins with a formal audit trail on the assigned issue:
+```bash
+# 1. Assign to self
+gh issue edit <N> --add-assignee @me
+
+# 2. Document starting branch
+gh issue comment <N> --body "Assigned to @$(gh api user -q .login). Starting implementation on branch \`feat/issue-<N>-<short-slug>\` following TDD and project standards."
+```
+
+### Step 2: Branch Creation
+
+Create a branch named after the assigned issue from latest `main`:
 ```bash
 git checkout main
 git pull origin main
 git checkout -b feat/issue-<N>-<short-slug>
 ```
 
-### Step 2: Implement via Superpowers TDD
+### Step 3: Implement via Superpowers TDD
 
 Follow `.agents/skills/implement-issue/SKILL.md`:
-- Review issue acceptance criteria and relevant ADRs.
+- Review issue acceptance criteria (`gh issue view <N>`) and relevant ADRs.
 - Write failing tests first (`superpowers:test-driven-development`).
 - Implement the minimal clean code to pass.
 - Verify APIs using `context7` MCP.
 
-### Step 3: Run Local Checks
+### Step 4: Run Local Checks
 
 Ensure all mechanical gates pass cleanly before pushing:
 ```bash
@@ -35,7 +46,7 @@ corepack pnpm check
 corepack pnpm build
 ```
 
-### Step 4: Commit and Push
+### Step 5: Commit and Push
 
 Use conventional commit messages in US English (`en-US`):
 ```bash
@@ -44,9 +55,17 @@ git commit -m "feat(members): implement member roster list view"
 git push -u origin feat/issue-<N>-<short-slug>
 ```
 
-### Step 5: Open Pull Request
+### Step 6: Open Pull Request & Link Issue
 
-1. Open a PR targeting `main`.
-2. Fill out all sections in the [Pull Request Template](../../.github/PULL_REQUEST_TEMPLATE.md).
-3. Ensure the GitHub Actions `ci` check passes (Verification and Build).
+1. Open a PR targeting `main` containing `Closes #<N>` in the body:
+
+   ```bash
+   gh pr create --title "feat(<scope>): ..." --body "Closes #<N> ..." --base main
+   ```
+2. Ensure the GitHub Actions `ci` check passes (Verification and Build).
+3. Post a comment on the issue referencing the opened PR:
+
+   ```bash
+   gh issue comment <N> --body "Implementation complete. Opened PR #<PR_NUMBER> for review."
+   ```
 4. Request review from the Infrastructure Owner.
