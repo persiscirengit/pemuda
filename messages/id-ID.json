@@ -41,5 +41,23 @@
     "notifications": "Notifikasi",
     "settings": "Pengaturan",
     "profile": "Profil"
+  },
+  "table": {
+    "noResults": "Tidak ada hasil ditemukan",
+    "rowsPerPage": "Baris per halaman",
+    "page": "Halaman",
+    "of": "dari",
+    "totalRows": "total baris",
+    "firstPage": "Ke halaman pertama",
+    "previousPage": "Ke halaman sebelumnya",
+    "nextPage": "Ke halaman berikutnya",
+    "lastPage": "Ke halaman terakhir"
+  },
+  "dialog": {
+    "confirm": "Konfirmasi",
+    "cancel": "Batal"
+  },
+  "emptyState": {
+    "noData": "Tidak ada data tersedia"
   }
 }
