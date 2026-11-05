@@ -31,3 +31,7 @@ tiptap
 recharts
 hookform
 esbuild
+supabase
+luxon
+uuidv
+uuidv4

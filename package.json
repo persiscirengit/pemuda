@@ -11,7 +11,9 @@
     "lint": "biome check .",
     "format": "biome format --write .",
     "check:spell": "cspell --no-progress \"**\" --config cspell.json",
-    "test": "vitest run"
+    "check:guardrails": "tsx scripts/guardrails.ts",
+    "test": "vitest run",
+    "check": "pnpm typecheck && pnpm lint && pnpm check:spell && pnpm check:guardrails && pnpm test"
   },
   "dependencies": {
     "next": "^16.4.4",
