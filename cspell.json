@@ -8,6 +8,7 @@
     "pnpm-workspace.yaml",
     "messages/id-ID.json",
     ".git/**",
+    "drizzle/**",
     "*.tsbuildinfo",
     "**/*.tsbuildinfo"
   ],
