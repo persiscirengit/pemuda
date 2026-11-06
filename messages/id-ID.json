@@ -22,6 +22,11 @@
       "loading": "Memuat",
       "error": "Galat",
       "success": "Berhasil"
+    },
+    "themes": {
+      "light": "Terang",
+      "dark": "Gelap",
+      "system": "Sistem"
     }
   },
   "auth": {
@@ -107,6 +112,85 @@
   },
   "emptyState": {
     "noData": "Tidak ada data tersedia"
+  },
+  "organization": {
+    "departments": {
+      "title": "Bidang",
+      "subtitle": "Kelola bidang dan divisi kepengurusan organisasi",
+      "createButton": "Tambah Bidang",
+      "editDepartment": "Ubah Bidang",
+      "createDepartment": "Tambah Bidang Baru",
+      "nameLabel": "Nama Bidang",
+      "namePlaceholder": "contoh: Kaderisasi",
+      "descriptionLabel": "Deskripsi",
+      "descriptionPlaceholder": "Uraian tugas dan fungsi bidang...",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Hapus Bidang",
+      "deleteConfirmMessage": "Apakah Anda yakin ingin menghapus bidang ini? Tindakan ini tidak dapat dibatalkan.",
+      "createdSuccess": "Bidang berhasil dibuat",
+      "updatedSuccess": "Bidang berhasil diperbarui",
+      "deletedSuccess": "Bidang berhasil dihapus",
+      "statusUpdatedSuccess": "Status bidang berhasil diperbarui",
+      "columns": {
+        "name": "Nama",
+        "description": "Deskripsi",
+        "status": "Status",
+        "actions": "Aksi"
+      }
+    },
+    "positions": {
+      "title": "Jabatan",
+      "subtitle": "Kelola struktur, tingkatan eksekutif, dan operasional jabatan",
+      "createButton": "Tambah Jabatan",
+      "editPosition": "Ubah Jabatan",
+      "createPosition": "Tambah Jabatan Baru",
+      "nameLabel": "Nama Jabatan",
+      "namePlaceholder": "contoh: Ketua, Sekretaris",
+      "descriptionLabel": "Deskripsi",
+      "descriptionPlaceholder": "Uraian tugas dan wewenang jabatan...",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Hapus Jabatan",
+      "deleteConfirmMessage": "Apakah Anda yakin ingin menghapus jabatan ini? Tindakan ini tidak dapat dibatalkan.",
+      "createdSuccess": "Jabatan berhasil dibuat",
+      "updatedSuccess": "Jabatan berhasil diperbarui",
+      "deletedSuccess": "Jabatan berhasil dihapus",
+      "statusUpdatedSuccess": "Status jabatan berhasil diperbarui",
+      "columns": {
+        "name": "Nama",
+        "description": "Deskripsi",
+        "status": "Status",
+        "actions": "Aksi"
+      }
+    },
+    "settings": {
+      "title": "Pengaturan Sistem",
+      "subtitle": "Konfigurasi identitas organisasi, kebijakan presensi, dan templat notifikasi",
+      "tabs": {
+        "general": "Umum & Identitas",
+        "attendance": "Kebijakan Presensi",
+        "notifications": "Templat Notifikasi"
+      },
+      "fields": {
+        "appName": "Nama Aplikasi",
+        "appNamePlaceholder": "contoh: Pemuda Cirengit",
+        "organizationName": "Nama Organisasi",
+        "organizationNamePlaceholder": "contoh: Pemuda Persis Cirengit",
+        "appLogo": "Logo Organisasi",
+        "favicon": "Ikon Favicon",
+        "themeMode": "Tema Default",
+        "defaultRadius": "Radius Geofence Default (meter)",
+        "openMinutesBefore": "Presensi Dibuka (menit sebelum)",
+        "closeMinutesAfter": "Presensi Ditutup (menit setelah)",
+        "accuracyTolerance": "Toleransi Akurasi GPS (meter)",
+        "whatsappTemplate": "Templat Pengingat WhatsApp",
+        "uploadLogo": "Unggah Logo",
+        "uploadFavicon": "Unggah Favicon",
+        "uploading": "Mengunggah..."
+      },
+      "saveButton": "Simpan Pengaturan",
+      "savedSuccess": "Pengaturan berhasil disimpan",
+      "uploadSuccess": "Berkas berhasil diunggah"
+    }
   },
   "activities": {
     "locations": {
