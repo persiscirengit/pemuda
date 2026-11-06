@@ -44,6 +44,10 @@ export default async function ScheduleDetailPage({
     PERMISSIONS.ACTIVITIES_SCHEDULES_MANAGE,
   );
 
+  const canGenerate = permissions.includes(
+    PERMISSIONS.ACTIVITIES_SCHEDULES_GENERATE,
+  );
+
   const schedule = await getAgendaScheduleById(id);
   if (!schedule) {
     notFound();
@@ -63,9 +67,18 @@ export default async function ScheduleDetailPage({
         title={schedule.title}
         description={schedule.description || t("detailsSubtitle")}
         actions={
-          <Button asChild variant="outline" size="sm">
-            <Link href="/schedules">{tCommon("actions.back")}</Link>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button asChild variant="outline" size="sm">
+              <Link href="/schedules">{tCommon("actions.back")}</Link>
+            </Button>
+            {canGenerate && schedule.scheduleType === "weekly" && (
+              <Button asChild size="sm">
+                <Link href={`/schedules/${schedule.id}/generate`}>
+                  {t("generateActivities")}
+                </Link>
+              </Button>
+            )}
+          </div>
         }
       />
 
