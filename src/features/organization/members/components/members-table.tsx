@@ -5,6 +5,7 @@ import {
   AlertTriangle,
   Edit2,
   Eye,
+  FileUp,
   MoreHorizontal,
   Plus,
   Trash2,
@@ -38,6 +39,7 @@ import {
 } from "@/components/ui/select";
 import type { Member } from "@/db/schema/organization";
 import { deleteMemberAction } from "@/features/organization/members/actions";
+import { ExportMembersButton } from "@/features/organization/members/export/export-members-button";
 import type { MemberWithDetails } from "@/server/dal/organization/members";
 import { AgeLimitDialog } from "./age-limit-dialog";
 import { MemberDialog } from "./member-dialog";
@@ -115,6 +117,21 @@ export function MembersTable({
       return true;
     });
   }, [filterTab, members, searchTerm, selectedDept, selectedPos]);
+
+  const activeFilters = React.useMemo(() => {
+    const memberStatus =
+      filterTab === "active" || filterTab === "inactive"
+        ? (filterTab as "active" | "inactive")
+        : undefined;
+
+    return {
+      search: searchTerm.trim() || undefined,
+      departmentId: selectedDept !== "all" ? selectedDept : undefined,
+      positionId: selectedPos !== "all" ? selectedPos : undefined,
+      memberStatus,
+      ageLimitDue: filterTab === "ageLimitDue" ? true : undefined,
+    };
+  }, [filterTab, searchTerm, selectedDept, selectedPos]);
 
   const handleDelete = async () => {
     if (!deletingId) return;
@@ -419,7 +436,17 @@ export function MembersTable({
             </SelectContent>
           </Select>
 
+          <ExportMembersButton filters={activeFilters} />
+
+          <Button asChild variant="outline" size="sm">
+            <Link href="/members/import">
+              <FileUp className="mr-2 h-4 w-4" />
+              <span>{t("importCsv")}</span>
+            </Link>
+          </Button>
+
           <Button
+            size="sm"
             onClick={() => {
               setEditingMember(null);
               setDialogOpen(true);

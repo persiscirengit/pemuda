@@ -1,8 +1,14 @@
 "use server";
 
+import { format } from "date-fns";
 import { z } from "zod";
 import { PERMISSIONS } from "@/lib/permissions";
 import { createPermissionActionClient } from "@/lib/safe-action";
+import {
+  exportMembersToCsv,
+  generateMemberCsvTemplate,
+  processMemberCsvImport,
+} from "@/server/dal/organization/member-csv";
 import {
   createMember,
   deleteMember,
@@ -26,6 +32,14 @@ const deleteMemberClient = createPermissionActionClient(
 
 const accountsMemberClient = createPermissionActionClient(
   PERMISSIONS.ORGANIZATION_MEMBERS_ACCOUNTS,
+);
+
+const importMemberClient = createPermissionActionClient(
+  PERMISSIONS.ORGANIZATION_MEMBERS_IMPORT,
+);
+
+const exportMemberClient = createPermissionActionClient(
+  PERMISSIONS.ORGANIZATION_MEMBERS_EXPORT,
 );
 
 const memberIdSchema = z.object({
@@ -155,4 +169,50 @@ export const resetPasswordAction = accountsMemberClient
       session: ctx.session,
       user: ctx.user,
     });
+  });
+
+const importMembersCsvSchema = z.object({
+  csvContent: z.string().min(1, { message: "CSV content is required" }),
+  dryRun: z.boolean().optional(),
+});
+
+export const importMembersCsvAction = importMemberClient
+  .inputSchema(importMembersCsvSchema)
+  .action(async ({ parsedInput, ctx }) => {
+    return await processMemberCsvImport(parsedInput.csvContent, {
+      dryRun: parsedInput.dryRun,
+      sessionOverride: {
+        session: ctx.session,
+        user: ctx.user,
+      },
+    });
+  });
+
+export const getMemberCsvTemplateAction = importMemberClient.action(
+  async () => {
+    return generateMemberCsvTemplate();
+  },
+);
+
+const exportMembersCsvSchema = z.object({
+  search: z.string().optional(),
+  departmentId: z.string().uuid().optional(),
+  positionId: z.string().uuid().optional(),
+  memberStatus: z.enum(["active", "inactive", "alumni", "moved"]).optional(),
+  ageLimitDue: z.boolean().optional(),
+});
+
+export const exportMembersCsvAction = exportMemberClient
+  .inputSchema(exportMembersCsvSchema)
+  .action(async ({ parsedInput, ctx }) => {
+    const csv = await exportMembersToCsv(parsedInput, {
+      sessionOverride: {
+        session: ctx.session,
+        user: ctx.user,
+      },
+    });
+    return {
+      csv,
+      filename: `members-export-${format(new Date(), "yyyy-MM-dd")}.csv`,
+    };
   });
