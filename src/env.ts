@@ -52,6 +52,7 @@ export const env = createEnv({
     process.env.NODE_ENV === "test" ||
     process.env.npm_lifecycle_event === "lint" ||
     process.env.npm_lifecycle_event === "check" ||
+    process.env.npm_lifecycle_event === "build" ||
     process.env.npm_lifecycle_event?.startsWith("db:") ||
     process.argv.some((arg) => arg.includes("drizzle-kit")),
   emptyStringAsUndefined: true,
