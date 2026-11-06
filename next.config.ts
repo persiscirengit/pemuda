@@ -5,6 +5,27 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      { source: "/artikel", destination: "/articles", permanent: true },
+      {
+        source: "/artikel/:slug",
+        destination: "/articles/:slug",
+        permanent: true,
+      },
+      { source: "/kajian", destination: "/articles", permanent: true },
+      {
+        source: "/kajian/:slug",
+        destination: "/articles/:slug",
+        permanent: true,
+      },
+      {
+        source: "/kategori/:slug",
+        destination: "/articles?category=:slug",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
@@ -18,18 +39,6 @@ const nextConfig: NextConfig = {
       {
         source: "/dashboard/my-profile",
         destination: "/my-profile",
-      },
-      {
-        source: "/dashboard/articles",
-        destination: "/articles",
-      },
-      {
-        source: "/dashboard/articles/create",
-        destination: "/articles/create",
-      },
-      {
-        source: "/dashboard/articles/:id/edit",
-        destination: "/articles/:id/edit",
       },
     ];
   },

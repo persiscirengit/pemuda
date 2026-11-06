@@ -151,3 +151,10 @@ Kantor
 Anwar
 Amiri
 Scheherazade
+Pimpinan
+Jamaah
+artikel
+kategori
+Laravel
+Mulk
+youtu
