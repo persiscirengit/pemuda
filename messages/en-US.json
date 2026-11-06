@@ -771,5 +771,46 @@
     "profileUpdateError": "Failed to update profile. Please try again.",
     "unlinkedTitle": "Account Not Linked",
     "unlinkedDescription": "Your account is not linked to any member roster. Please contact the administrator to assign your member profile."
+  },
+  "landing": {
+    "heroTitle": "Pemuda Persis Cirengit",
+    "heroSubtitle": "Building an enlightened Islamic youth community through Quranic education, intellectual discourse, and social service.",
+    "exploreArticles": "Read Articles & Kajian",
+    "memberPortal": "Member Portal",
+    "featuredSectionTitle": "Featured Articles & Bulletins",
+    "featuredSectionSubtitle": "Selected Islamic studies, educational reflections, and organizational bulletins",
+    "activitiesSectionTitle": "Upcoming Activities & Kajian",
+    "activitiesSectionSubtitle": "Join our upcoming weekly studies, discussions, and community programs",
+    "allActivities": "View All Activities",
+    "allArticles": "Browse All Articles",
+    "missionTitle": "Our Mission",
+    "missionText": "Nurturing generations of principled, knowledgeable youth grounded in the Quran and Sunnah, actively contributing to the welfare of society.",
+    "noActivities": "No scheduled public activities at this moment.",
+    "noArticles": "No published articles available yet."
+  },
+  "publicArticles": {
+    "title": "Articles & Kajian",
+    "subtitle": "Explore organizational bulletins, Islamic studies, and community articles",
+    "searchPlaceholder": "Search articles by title or keyword...",
+    "allCategories": "All Categories",
+    "readingTime": "{minutes} min read",
+    "views": "{count} views",
+    "publishedOn": "Published on {date}",
+    "writtenBy": "By {author}",
+    "backToArticles": "Back to Articles",
+    "notFoundTitle": "Article Not Found",
+    "notFoundMessage": "The article you are looking for does not exist, has been archived, or was moved.",
+    "videoEmbedTitle": "Accompanying Video",
+    "emptyMessage": "No articles found matching your criteria."
+  },
+  "publicNav": {
+    "home": "Home",
+    "articles": "Articles",
+    "dashboard": "Dashboard",
+    "login": "Sign In",
+    "contact": "Contact",
+    "organization": "Pimpinan Jamaah Pemuda Persis Cirengit",
+    "allRightsReserved": "All rights reserved.",
+    "copyright": "© {year} {organization}. {allRightsReserved}"
   }
 }

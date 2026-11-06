@@ -771,5 +771,46 @@
     "profileUpdateError": "Gagal memperbarui profil. Silakan coba lagi.",
     "unlinkedTitle": "Akun Belum Tertaut",
     "unlinkedDescription": "Akun Anda belum terhubung dengan data keanggotaan. Silakan hubungi pengurus untuk menautkan profil anggota Anda."
+  },
+  "landing": {
+    "heroTitle": "Pemuda Persis Cirengit",
+    "heroSubtitle": "Membangun generasi pemuda Islam yang tercerahkan melalui pendidikan Al-Qur'an, kajian keilmuan, dan bakti sosial kemasyarakatan.",
+    "exploreArticles": "Baca Artikel & Kajian",
+    "memberPortal": "Portal Anggota",
+    "featuredSectionTitle": "Artikel & Buletin Pilihan",
+    "featuredSectionSubtitle": "Kajian Islam, refleksi pendidikan, dan buletin dakwah pilihan",
+    "activitiesSectionTitle": "Jadwal Kegiatan & Kajian",
+    "activitiesSectionSubtitle": "Ikuti agenda kajian pekanan, majelis taklim, dan program kemasyarakatan kami",
+    "allActivities": "Lihat Semua Kegiatan",
+    "allArticles": "Jelajahi Semua Artikel",
+    "missionTitle": "Misi Kami",
+    "missionText": "Membina generasi pemuda yang berakhlak mulia, berilmu amaliyah berlandaskan Al-Qur'an dan Sunnah, serta berkontribusi nyata bagi umat.",
+    "noActivities": "Belum ada jadwal kegiatan publik saat ini.",
+    "noArticles": "Belum ada artikel publik yang diterbitkan."
+  },
+  "publicArticles": {
+    "title": "Artikel & Kajian",
+    "subtitle": "Jelajahi buletin dakwah, risalah kajian Islam, dan artikel kemasyarakatan",
+    "searchPlaceholder": "Cari artikel berdasarkan judul atau kata kunci...",
+    "allCategories": "Semua Kategori",
+    "readingTime": "{minutes} mnt baca",
+    "views": "{count} tayangan",
+    "publishedOn": "Diterbitkan pada {date}",
+    "writtenBy": "Oleh {author}",
+    "backToArticles": "Kembali ke Daftar Artikel",
+    "notFoundTitle": "Artikel Tidak Ditemukan",
+    "notFoundMessage": "Artikel yang Anda cari tidak ditemukan, telah diarsipkan, atau dipindahkan.",
+    "videoEmbedTitle": "Video Terkait",
+    "emptyMessage": "Belum ada artikel yang cocok dengan pencarian Anda."
+  },
+  "publicNav": {
+    "home": "Beranda",
+    "articles": "Artikel",
+    "dashboard": "Dasbor",
+    "login": "Masuk",
+    "contact": "Kontak",
+    "organization": "Pimpinan Jamaah Pemuda Persis Cirengit",
+    "allRightsReserved": "Hak cipta dilindungi undang-undang.",
+    "copyright": "© {year} {organization}. {allRightsReserved}"
   }
 }
