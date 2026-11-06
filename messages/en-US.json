@@ -10,6 +10,7 @@
       "delete": "Delete",
       "search": "Search",
       "filter": "Filter",
+      "filterAll": "All",
       "export": "Export",
       "import": "Import",
       "back": "Back",
@@ -21,6 +22,11 @@
       "loading": "Loading",
       "error": "Error",
       "success": "Success"
+    },
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
     }
   },
   "auth": {
@@ -106,5 +112,84 @@
   },
   "emptyState": {
     "noData": "No data available"
+  },
+  "organization": {
+    "departments": {
+      "title": "Departments",
+      "subtitle": "Manage organizational departments and functional divisions",
+      "createButton": "Add Department",
+      "editDepartment": "Edit Department",
+      "createDepartment": "Create Department",
+      "nameLabel": "Department Name",
+      "namePlaceholder": "e.g., Kaderisasi",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Department responsibilities and scope...",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Delete Department",
+      "deleteConfirmMessage": "Are you sure you want to delete this department? This action cannot be undone.",
+      "createdSuccess": "Department created successfully",
+      "updatedSuccess": "Department updated successfully",
+      "deletedSuccess": "Department deleted successfully",
+      "statusUpdatedSuccess": "Department status updated",
+      "columns": {
+        "name": "Name",
+        "description": "Description",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "positions": {
+      "title": "Positions",
+      "subtitle": "Manage structural, executive, and operational positions",
+      "createButton": "Add Position",
+      "editPosition": "Edit Position",
+      "createPosition": "Create Position",
+      "nameLabel": "Position Name",
+      "namePlaceholder": "e.g., Ketua, Sekretaris",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Position responsibilities and scope...",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Delete Position",
+      "deleteConfirmMessage": "Are you sure you want to delete this position? This action cannot be undone.",
+      "createdSuccess": "Position created successfully",
+      "updatedSuccess": "Position updated successfully",
+      "deletedSuccess": "Position deleted successfully",
+      "statusUpdatedSuccess": "Position status updated",
+      "columns": {
+        "name": "Name",
+        "description": "Description",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "settings": {
+      "title": "System Settings",
+      "subtitle": "Configure branding identity, attendance policies, and notification templates",
+      "tabs": {
+        "general": "General & Branding",
+        "attendance": "Attendance Defaults",
+        "notifications": "Notification Templates"
+      },
+      "fields": {
+        "appName": "Application Name",
+        "appNamePlaceholder": "e.g., Pemuda Cirengit",
+        "organizationName": "Organization Name",
+        "organizationNamePlaceholder": "e.g., Pemuda Persis Cirengit",
+        "appLogo": "Organization Logo",
+        "favicon": "Favicon Icon",
+        "themeMode": "Default Theme",
+        "defaultRadius": "Default Geofence Radius (meters)",
+        "openMinutesBefore": "Open Check-In (minutes before)",
+        "closeMinutesAfter": "Close Check-In (minutes after)",
+        "accuracyTolerance": "GPS Accuracy Tolerance (meters)",
+        "whatsappTemplate": "WhatsApp Reminder Template",
+        "uploadLogo": "Upload Logo",
+        "uploadFavicon": "Upload Favicon",
+        "uploading": "Uploading..."
+      },
+      "saveButton": "Save Settings",
+      "savedSuccess": "Settings updated successfully",
+      "uploadSuccess": "Asset uploaded successfully"
+    }
   }
 }
