@@ -42,3 +42,9 @@ varchar
 checkin
 cmdk
 vaul
+exif
+EXIF
+upscales
+downscales
+presigner
+
