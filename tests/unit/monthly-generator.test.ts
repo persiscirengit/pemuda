@@ -228,9 +228,12 @@ vi.mock("@/db", () => {
         },
       }),
       insert: () => ({
-        values: (val: Record<string, unknown> | Array<Record<string, unknown>>) => {
+        values: (
+          val: Record<string, unknown> | Array<Record<string, unknown>>,
+        ) => {
           const rows = Array.isArray(val) ? val : [val];
-          const isAttendance = rows.length > 0 && "memberId" in rows[0];
+          const isAttendance =
+            rows.length > 0 && rows[0] !== undefined && "memberId" in rows[0];
 
           if (isAttendance) {
             for (const r of rows) {
@@ -565,8 +568,8 @@ describe("Monthly Recurring Generator DAL", () => {
     );
     expect(recordsForW2).toHaveLength(2);
     expect(recordsForW2.map((r) => r.memberId)).toEqual(["mem-1", "mem-2"]);
-    expect(recordsForW2[0].status).toBe("absent");
-    expect(recordsForW2[0].attendanceMethod).toBe("manual");
-    expect(recordsForW2[0].verificationStatus).toBe("valid");
+    expect(recordsForW2[0]?.status).toBe("absent");
+    expect(recordsForW2[0]?.attendanceMethod).toBe("manual");
+    expect(recordsForW2[0]?.verificationStatus).toBe("valid");
   });
 });

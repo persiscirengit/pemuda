@@ -205,15 +205,24 @@ describe("Attendance Participant Synchronization", () => {
     mockMembers.push(
       { id: "mem-active-1", fullName: "Ahmad Fauzi", memberStatus: "active" },
       { id: "mem-active-2", fullName: "Budi Santoso", memberStatus: "active" },
-      { id: "mem-inactive", fullName: "Dedi Inactive", memberStatus: "inactive" },
+      {
+        id: "mem-inactive",
+        fullName: "Dedi Inactive",
+        memberStatus: "inactive",
+      },
       { id: "mem-alumni", fullName: "Eko Alumni", memberStatus: "alumni" },
       { id: "mem-moved", fullName: "Fajar Moved", memberStatus: "moved" },
     );
 
-    const syncedCount = await syncActivityParticipants("act-100", managerSession);
+    const syncedCount = await syncActivityParticipants(
+      "act-100",
+      managerSession,
+    );
     expect(syncedCount).toBe(2);
 
-    const records = mockAttendanceRecords.filter((r) => r.activityId === "act-100");
+    const records = mockAttendanceRecords.filter(
+      (r) => r.activityId === "act-100",
+    );
     expect(records).toHaveLength(2);
 
     for (const rec of records) {
@@ -232,10 +241,15 @@ describe("Attendance Participant Synchronization", () => {
 
   it("is idempotent and avoids duplicate participant records on repeated sync", async () => {
     // Calling sync again for act-100 should insert 0 new records
-    const repeatedCount = await syncActivityParticipants("act-100", managerSession);
+    const repeatedCount = await syncActivityParticipants(
+      "act-100",
+      managerSession,
+    );
     expect(repeatedCount).toBe(0);
 
-    const totalRecords = mockAttendanceRecords.filter((r) => r.activityId === "act-100");
+    const totalRecords = mockAttendanceRecords.filter(
+      (r) => r.activityId === "act-100",
+    );
     expect(totalRecords).toHaveLength(2);
 
     // If a new active member joins later:
@@ -245,11 +259,18 @@ describe("Attendance Participant Synchronization", () => {
       memberStatus: "active",
     });
 
-    const newSyncCount = await syncActivityParticipants("act-100", managerSession);
+    const newSyncCount = await syncActivityParticipants(
+      "act-100",
+      managerSession,
+    );
     expect(newSyncCount).toBe(1);
 
-    const updatedRecords = mockAttendanceRecords.filter((r) => r.activityId === "act-100");
+    const updatedRecords = mockAttendanceRecords.filter(
+      (r) => r.activityId === "act-100",
+    );
     expect(updatedRecords).toHaveLength(3);
-    expect(updatedRecords.some((r) => r.memberId === "mem-active-3")).toBe(true);
+    expect(updatedRecords.some((r) => r.memberId === "mem-active-3")).toBe(
+      true,
+    );
   });
 });

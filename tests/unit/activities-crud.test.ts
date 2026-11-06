@@ -114,7 +114,7 @@ function filterActivitiesByCondition(
         .toLowerCase();
       if (
         !row.title.toLowerCase().includes(q) &&
-        !(row.topic && row.topic.toLowerCase().includes(q))
+        !row.topic?.toLowerCase().includes(q)
       ) {
         return false;
       }
@@ -150,7 +150,7 @@ function makeActivityQuery(currItems: MockActivity[]) {
 vi.mock("@/db", () => {
   return {
     db: {
-      select: (selectFields?: unknown) => ({
+      select: (_selectFields?: unknown) => ({
         from: (table: unknown) => {
           let tableName = "";
           try {
@@ -224,7 +224,9 @@ vi.mock("@/db", () => {
         },
       }),
       insert: () => ({
-        values: (val: Record<string, unknown> | Array<Record<string, unknown>>) => {
+        values: (
+          val: Record<string, unknown> | Array<Record<string, unknown>>,
+        ) => {
           const rows = Array.isArray(val) ? val : [val];
           const created: MockActivity[] = [];
 
@@ -246,8 +248,7 @@ vi.mock("@/db", () => {
               latitude: (row.latitude as string) ?? null,
               longitude: (row.longitude as string) ?? null,
               attendanceRadius: (row.attendanceRadius as number) ?? 100,
-              status:
-                (row.status as MockActivity["status"]) || "scheduled",
+              status: (row.status as MockActivity["status"]) || "scheduled",
               changeReason: (row.changeReason as string) ?? null,
               attendanceEnabled:
                 row.attendanceEnabled !== undefined
@@ -431,11 +432,7 @@ describe("Activities Events DAL & Lifecycle", () => {
 
     // Status requires ACTIVITIES_EVENTS_STATUS
     await expect(
-      updateActivityStatus(
-        "act-1",
-        { status: "completed" },
-        viewerSession,
-      ),
+      updateActivityStatus("act-1", { status: "completed" }, viewerSession),
     ).rejects.toThrow(UnauthorizedError);
 
     // Delete requires ACTIVITIES_EVENTS_DELETE
@@ -543,11 +540,7 @@ describe("Activities Events DAL & Lifecycle", () => {
 
     // Missing reason for holiday
     await expect(
-      updateActivityStatus(
-        activity.id,
-        { status: "holiday" },
-        managerSession,
-      ),
+      updateActivityStatus(activity.id, { status: "holiday" }, managerSession),
     ).rejects.toThrow(/reason is required/i);
 
     // Missing reason for relocated

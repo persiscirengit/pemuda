@@ -1,6 +1,6 @@
 import "server-only";
 
-import { and, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import {
   type Activity,
@@ -73,8 +73,8 @@ export function computeAttendanceWindow(
   // If time provided e.g. "18:30" and "20:00"
   // openAt: 1 hour before start time (or at start time if before 01:00)
   // closeAt: 1 hour after end time (or at end time)
-  const [sHour, sMin] = (startTime || "08:00").split(":").map(Number);
-  const [eHour, eMin] = (endTime || "10:00").split(":").map(Number);
+  const [sHour = 8, sMin = 0] = (startTime || "08:00").split(":").map(Number);
+  const [eHour = 10, eMin = 0] = (endTime || "10:00").split(":").map(Number);
 
   const openHour = Math.max(0, sHour - 1);
   const closeHour = Math.min(23, eHour + 1);
@@ -152,7 +152,7 @@ export async function calculateMonthlyOccurrences(
       occurrences.push({
         weekNumber: weekIndex,
         date: dateStr,
-        dayName: DAY_NAMES[schedule.dayOfWeek],
+        dayName: DAY_NAMES[schedule.dayOfWeek] || "Unknown",
         topic: defaultTopic,
         isActive: !isDuplicate,
         isDuplicate,
@@ -298,12 +298,17 @@ export async function generateMonthlyActivities(
       })
       .returning();
 
-    createdActivities.push(created);
-    existingDates.add(occ.date);
+    if (created) {
+      createdActivities.push(created);
+      existingDates.add(occ.date);
 
-    // Pre-populate baseline attendance records for active members
-    const synced = await syncActivityParticipants(created.id, sessionOverride);
-    totalParticipantsSynced += synced;
+      // Pre-populate baseline attendance records for active members
+      const synced = await syncActivityParticipants(
+        created.id,
+        sessionOverride,
+      );
+      totalParticipantsSynced += synced;
+    }
   }
 
   return {

@@ -156,9 +156,7 @@ export async function getActivities(
 
   if (params?.search && params.search.trim().length > 0) {
     const q = `%${params.search.trim()}%`;
-    conditions.push(
-      or(ilike(activities.title, q), ilike(activities.topic, q)),
-    );
+    conditions.push(or(ilike(activities.title, q), ilike(activities.topic, q)));
   }
 
   const query = db
@@ -167,9 +165,7 @@ export async function getActivities(
     .orderBy(desc(activities.activityDate), desc(activities.createdAt));
 
   const items =
-    conditions.length > 0
-      ? await query.where(and(...conditions))
-      : await query;
+    conditions.length > 0 ? await query.where(and(...conditions)) : await query;
 
   return items;
 }
@@ -240,9 +236,8 @@ export async function getActivityById(
     present: records.filter((r) => r.status === "present").length,
     absent: records.filter((r) => r.status === "absent").length,
     permission: records.filter((r) => r.status === "permission").length,
-    needVerification: records.filter(
-      (r) => r.status === "need_verification",
-    ).length,
+    needVerification: records.filter((r) => r.status === "need_verification")
+      .length,
   };
 
   result.attendanceSummary = summary;
@@ -311,6 +306,10 @@ export async function createActivity(
       createdBy: session.user.id,
     })
     .returning();
+
+  if (!created) {
+    throw new Error("Failed to create activity record.");
+  }
 
   return created;
 }
