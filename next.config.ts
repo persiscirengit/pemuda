@@ -19,6 +19,18 @@ const nextConfig: NextConfig = {
         source: "/dashboard/my-profile",
         destination: "/my-profile",
       },
+      {
+        source: "/dashboard/articles",
+        destination: "/articles",
+      },
+      {
+        source: "/dashboard/articles/create",
+        destination: "/articles/create",
+      },
+      {
+        source: "/dashboard/articles/:id/edit",
+        destination: "/articles/:id/edit",
+      },
     ];
   },
 };
