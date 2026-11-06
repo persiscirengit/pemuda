@@ -10,6 +10,7 @@ import {
 } from "drizzle-orm/pg-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { v7 as uuidv7 } from "uuid";
+import { members } from "./organization";
 
 // -----------------------------------------------------------------------------
 // Better Auth Core Tables
@@ -20,7 +21,9 @@ export const users = pgTable("users", {
     .defaultRandom()
     .primaryKey()
     .$defaultFn(() => uuidv7()),
-  memberId: uuid("member_id").unique(),
+  memberId: uuid("member_id")
+    .references(() => members.id, { onDelete: "set null" })
+    .unique(),
   name: varchar("name", { length: 150 }).notNull(),
   email: varchar("email", { length: 255 }).notNull().unique(),
   emailVerified: boolean("email_verified").default(false).notNull(),
@@ -185,7 +188,11 @@ export const userRoles = pgTable(
 // Drizzle Relations
 // -----------------------------------------------------------------------------
 
-export const usersRelations = relations(users, ({ many }) => ({
+export const usersRelations = relations(users, ({ one, many }) => ({
+  member: one(members, {
+    fields: [users.memberId],
+    references: [members.id],
+  }),
   sessions: many(sessions),
   accounts: many(accounts),
   userRoles: many(userRoles),
