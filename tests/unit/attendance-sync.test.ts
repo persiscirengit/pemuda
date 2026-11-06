@@ -255,7 +255,7 @@ describe("Attendance Participant Synchronization", () => {
     // If a new active member joins later:
     mockMembers.push({
       id: "mem-active-3",
-      fullName: "Gani Baru",
+      fullName: "Third Active Member",
       memberStatus: "active",
     });
 

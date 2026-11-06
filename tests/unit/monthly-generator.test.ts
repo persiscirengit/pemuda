@@ -475,9 +475,9 @@ describe("Monthly Recurring Generator DAL", () => {
   it("generates activities, computes attendance windows, creates 64-char token, and handles duplicates/inactives", async () => {
     // Setup active and inactive members
     mockMembers.push(
-      { id: "mem-1", fullName: "Member Satu", memberStatus: "active" },
-      { id: "mem-2", fullName: "Member Dua", memberStatus: "active" },
-      { id: "mem-3", fullName: "Member Tiga", memberStatus: "inactive" },
+      { id: "mem-1", fullName: "Member One", memberStatus: "active" },
+      { id: "mem-2", fullName: "Member Two", memberStatus: "active" },
+      { id: "mem-3", fullName: "Member Three", memberStatus: "inactive" },
     );
 
     // Pre-insert an activity for 2026-11-07 (to test duplicate skipping)

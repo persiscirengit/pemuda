@@ -565,13 +565,13 @@ describe("Activities Events DAL & Lifecycle", () => {
       activity.id,
       {
         status: "postponed",
-        changeReason: "Ustadz berhalangan hadir karena safar",
+        changeReason: "Speaker unable to attend due to travel",
       },
       managerSession,
     );
     expect(postponed.status).toBe("postponed");
     expect(postponed.changeReason).toBe(
-      "Ustadz berhalangan hadir karena safar",
+      "Speaker unable to attend due to travel",
     );
     expect(postponed.attendanceEnabled).toBe(false);
 
@@ -580,7 +580,7 @@ describe("Activities Events DAL & Lifecycle", () => {
       activity.id,
       {
         status: "cancelled",
-        changeReason: "Hujan badai ekstrem dan banjir",
+        changeReason: "Severe weather and emergency flooding",
       },
       managerSession,
     );
