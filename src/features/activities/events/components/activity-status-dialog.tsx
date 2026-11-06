@@ -22,12 +22,21 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  type ActivityLifecycleStatus,
-  STATUSES_DISABLING_ATTENDANCE,
-  STATUSES_REQUIRING_REASON,
-} from "@/server/dal/activities/events";
+import type { ActivityLifecycleStatus } from "@/server/dal/activities/events";
 import { updateActivityStatusAction } from "../actions";
+
+const STATUSES_REQUIRING_REASON: ActivityLifecycleStatus[] = [
+  "holiday",
+  "postponed",
+  "relocated",
+  "cancelled",
+];
+
+const STATUSES_DISABLING_ATTENDANCE: ActivityLifecycleStatus[] = [
+  "holiday",
+  "postponed",
+  "cancelled",
+];
 
 export interface ActivityStatusDialogProps {
   open: boolean;
