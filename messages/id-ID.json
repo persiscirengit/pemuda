@@ -10,6 +10,7 @@
       "delete": "Hapus",
       "search": "Cari",
       "filter": "Saring",
+      "filterAll": "Semua",
       "export": "Ekspor",
       "import": "Impor",
       "back": "Kembali",
@@ -21,6 +22,11 @@
       "loading": "Memuat",
       "error": "Galat",
       "success": "Berhasil"
+    },
+    "themes": {
+      "light": "Terang",
+      "dark": "Gelap",
+      "system": "Sistem"
     }
   },
   "auth": {
@@ -74,17 +80,17 @@
     "attendanceManage": "Verifikasi Presensi",
     "finance": "Keuangan",
     "financialLedger": "Buku Kas",
-    "financialCategories": "Kategori Keuangan",
     "membershipFees": "Iuran Anggota",
     "myFees": "Iuran Saya",
     "content": "Konten",
     "articles": "Artikel",
-    "articleCategories": "Kategori Artikel",
     "notifications": "Notifikasi",
     "settings": "Pengaturan",
     "broadcasts": "Siaran",
     "systemSettings": "Pengaturan Sistem",
-    "profile": "Profil"
+    "profile": "Profil",
+    "financialCategories": "Kategori Keuangan",
+    "articleCategories": "Kategori Artikel"
   },
   "shell": {
     "fieldCheckIn": "Presensi Lapangan",
@@ -108,6 +114,181 @@
   },
   "emptyState": {
     "noData": "Tidak ada data tersedia"
+  },
+  "organization": {
+    "departments": {
+      "title": "Bidang",
+      "subtitle": "Kelola bidang dan divisi kepengurusan organisasi",
+      "createButton": "Tambah Bidang",
+      "editDepartment": "Ubah Bidang",
+      "createDepartment": "Tambah Bidang Baru",
+      "nameLabel": "Nama Bidang",
+      "namePlaceholder": "contoh: Kaderisasi",
+      "descriptionLabel": "Deskripsi",
+      "descriptionPlaceholder": "Uraian tugas dan fungsi bidang...",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Hapus Bidang",
+      "deleteConfirmMessage": "Apakah Anda yakin ingin menghapus bidang ini? Tindakan ini tidak dapat dibatalkan.",
+      "createdSuccess": "Bidang berhasil dibuat",
+      "updatedSuccess": "Bidang berhasil diperbarui",
+      "deletedSuccess": "Bidang berhasil dihapus",
+      "statusUpdatedSuccess": "Status bidang berhasil diperbarui",
+      "columns": {
+        "name": "Nama",
+        "description": "Deskripsi",
+        "status": "Status",
+        "actions": "Aksi"
+      }
+    },
+    "positions": {
+      "title": "Jabatan",
+      "subtitle": "Kelola struktur, tingkatan eksekutif, dan operasional jabatan",
+      "createButton": "Tambah Jabatan",
+      "editPosition": "Ubah Jabatan",
+      "createPosition": "Tambah Jabatan Baru",
+      "nameLabel": "Nama Jabatan",
+      "namePlaceholder": "contoh: Ketua, Sekretaris",
+      "descriptionLabel": "Deskripsi",
+      "descriptionPlaceholder": "Uraian tugas dan wewenang jabatan...",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Hapus Jabatan",
+      "deleteConfirmMessage": "Apakah Anda yakin ingin menghapus jabatan ini? Tindakan ini tidak dapat dibatalkan.",
+      "createdSuccess": "Jabatan berhasil dibuat",
+      "updatedSuccess": "Jabatan berhasil diperbarui",
+      "deletedSuccess": "Jabatan berhasil dihapus",
+      "statusUpdatedSuccess": "Status jabatan berhasil diperbarui",
+      "columns": {
+        "name": "Nama",
+        "description": "Deskripsi",
+        "status": "Status",
+        "actions": "Aksi"
+      }
+    },
+    "settings": {
+      "title": "Pengaturan Sistem",
+      "subtitle": "Konfigurasi identitas organisasi, kebijakan presensi, dan templat notifikasi",
+      "tabs": {
+        "general": "Umum & Identitas",
+        "attendance": "Kebijakan Presensi",
+        "notifications": "Templat Notifikasi"
+      },
+      "fields": {
+        "appName": "Nama Aplikasi",
+        "appNamePlaceholder": "contoh: Pemuda Cirengit",
+        "organizationName": "Nama Organisasi",
+        "organizationNamePlaceholder": "contoh: Pemuda Persis Cirengit",
+        "appLogo": "Logo Organisasi",
+        "favicon": "Ikon Favicon",
+        "themeMode": "Tema Default",
+        "defaultRadius": "Radius Geofence Default (meter)",
+        "openMinutesBefore": "Presensi Dibuka (menit sebelum)",
+        "closeMinutesAfter": "Presensi Ditutup (menit setelah)",
+        "accuracyTolerance": "Toleransi Akurasi GPS (meter)",
+        "whatsappTemplate": "Templat Pengingat WhatsApp",
+        "uploadLogo": "Unggah Logo",
+        "uploadFavicon": "Unggah Favicon",
+        "uploading": "Mengunggah..."
+      },
+      "saveButton": "Simpan Pengaturan",
+      "savedSuccess": "Pengaturan berhasil disimpan",
+      "uploadSuccess": "Berkas berhasil diunggah"
+    }
+  },
+  "activities": {
+    "locations": {
+      "title": "Lokasi Kegiatan",
+      "subtitle": "Kelola lokasi fisik, koordinat geografis, dan radius presensi",
+      "createButton": "Tambah Lokasi",
+      "editLocation": "Ubah Lokasi",
+      "createLocation": "Tambah Lokasi Baru",
+      "nameLabel": "Nama Lokasi",
+      "namePlaceholder": "contoh: Masjid Al-Jihad Cirengit",
+      "addressLabel": "Alamat",
+      "addressPlaceholder": "Nama jalan, RT/RW, desa...",
+      "latitudeLabel": "Latitude (-90 s/d 90)",
+      "latitudePlaceholder": "-6.9174639",
+      "longitudeLabel": "Longitude (-180 s/d 180)",
+      "longitudePlaceholder": "107.6191228",
+      "radiusLabel": "Radius Presensi (meter)",
+      "radiusPlaceholder": "100",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Hapus Lokasi",
+      "deleteConfirmMessage": "Apakah Anda yakin ingin menghapus lokasi ini? Data riwayat presensi tetap tersimpan.",
+      "createdSuccess": "Lokasi kegiatan berhasil dibuat",
+      "updatedSuccess": "Lokasi kegiatan berhasil diperbarui",
+      "deletedSuccess": "Lokasi kegiatan berhasil dihapus",
+      "statusUpdatedSuccess": "Status lokasi berhasil diperbarui",
+      "columns": {
+        "name": "Nama Lokasi",
+        "address": "Alamat",
+        "coordinates": "Koordinat",
+        "radius": "Radius",
+        "status": "Status",
+        "actions": "Aksi"
+      }
+    },
+    "schedules": {
+      "title": "Jadwal Agenda",
+      "subtitle": "Kelola templat kegiatan rutin dan berkala",
+      "createButton": "Tambah Jadwal",
+      "editSchedule": "Ubah Jadwal",
+      "createSchedule": "Tambah Jadwal Baru",
+      "detailsTitle": "Detail Jadwal",
+      "detailsSubtitle": "Konfigurasi cetak biru agenda dan kurikulum kajian",
+      "titleLabel": "Nama Agenda",
+      "titlePlaceholder": "contoh: Kajian Pekanan Malam Ahad",
+      "descriptionLabel": "Deskripsi",
+      "descriptionPlaceholder": "Gambaran umum dan tujuan agenda...",
+      "scheduleTypeLabel": "Jenis Perulangan",
+      "types": {
+        "weekly": "Pekanan",
+        "monthly": "Bulanan",
+        "incidental": "Insidental",
+        "yearly": "Tahunan"
+      },
+      "dayOfWeekLabel": "Hari",
+      "days": {
+        "sun": "Ahad",
+        "mon": "Senin",
+        "tue": "Selasa",
+        "wed": "Rabu",
+        "thu": "Kamis",
+        "fri": "Jumat",
+        "sat": "Sabtu"
+      },
+      "dayOfMonthLabel": "Tanggal dalam Bulan (1 - 31)",
+      "specificDateLabel": "Tanggal Tertentu",
+      "startTimeLabel": "Waktu Mulai",
+      "endTimeLabel": "Waktu Selesai",
+      "timeRange": "Waktu",
+      "departmentLabel": "Bidang Penanggung Jawab",
+      "noDepartment": "Tanpa bidang khusus",
+      "picLabel": "Penanggung Jawab (PIC)",
+      "noPic": "Belum ada PIC",
+      "locationLabel": "Lokasi Kegiatan",
+      "noLocation": "Belum memilih lokasi",
+      "statusLabel": "Status",
+      "deleteConfirmTitle": "Hapus Jadwal",
+      "deleteConfirmMessage": "Apakah Anda yakin ingin menghapus jadwal ini? Data kegiatan yang telah berlangsung tetap tersimpan.",
+      "createdSuccess": "Jadwal agenda berhasil dibuat",
+      "updatedSuccess": "Jadwal agenda berhasil diperbarui",
+      "deletedSuccess": "Jadwal agenda berhasil dihapus",
+      "statusUpdatedSuccess": "Status jadwal berhasil diperbarui",
+      "weeklyCurriculumTitle": "Kurikulum Kajian Pekanan (Pekan 1 - 5)",
+      "weeklyCurriculumSubtitle": "Atur rotasi tema bulanan untuk kajian pekanan",
+      "week": "Pekan {number}",
+      "topicPlaceholder": "Tema kajian, kitab rujukan, atau pemateri...",
+      "saveTopicsButton": "Simpan Kurikulum",
+      "topicsSavedSuccess": "Kurikulum kajian berhasil disimpan",
+      "columns": {
+        "title": "Judul",
+        "type": "Jenis",
+        "timing": "Waktu",
+        "department": "Bidang",
+        "status": "Status",
+        "actions": "Aksi"
+      }
+    }
   },
   "finance": {
     "categoriesTitle": "Kategori Keuangan",
