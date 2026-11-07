@@ -812,5 +812,60 @@
     "organization": "Pimpinan Jamaah Pemuda Persis Cirengit",
     "allRightsReserved": "All rights reserved.",
     "copyright": "© {year} {organization}. {allRightsReserved}"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Stay updated on activities, attendance reminders, and official announcements",
+    "empty": "No notifications yet",
+    "emptyUnread": "No unread notifications",
+    "markAllRead": "Mark all as read",
+    "markAsRead": "Mark as read",
+    "viewAll": "View all notifications",
+    "settings": "Notification Settings",
+    "settingsSubtitle": "Customize how and when you receive activity reminders, attendance alerts, and announcements",
+    "inAppChannel": "In-App Feed",
+    "pushChannel": "Push Notification",
+    "savePreferences": "Save Preferences",
+    "saving": "Saving...",
+    "preferencesSaved": "Notification preferences updated successfully",
+    "preferencesError": "Failed to update notification preferences",
+    "tabs": {
+      "all": "All",
+      "unread": "Unread"
+    },
+    "categories": {
+      "activity_reminder": {
+        "title": "Activity Reminders",
+        "description": "Alerts for upcoming scheduled activities and studies"
+      },
+      "attendance_opened": {
+        "title": "Attendance Window Opened",
+        "description": "Alerts when check-in window opens for an active event"
+      },
+      "attendance_closing_soon": {
+        "title": "Attendance Closing Soon",
+        "description": "Urgent alerts when attendance closes in less than 30 minutes"
+      },
+      "attendance_not_submitted": {
+        "title": "Missing Attendance",
+        "description": "Reminders if you have not checked in for an ongoing activity"
+      },
+      "activity_updated": {
+        "title": "Activity Updates",
+        "description": "Alerts when an activity schedule, location, or topic changes"
+      },
+      "admin_announcement": {
+        "title": "Official Announcements",
+        "description": "Decrees, executive bulletins, and organizational broadcasts"
+      },
+      "attendance_status": {
+        "title": "Attendance Verification",
+        "description": "Verification results and status changes on your attendance records"
+      },
+      "profile_reminder": {
+        "title": "Profile Completion Reminders",
+        "description": "Periodic prompts to complete required roster contact and personal info"
+      }
+    }
   }
 }

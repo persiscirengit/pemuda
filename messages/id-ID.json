@@ -812,5 +812,60 @@
     "organization": "Pimpinan Jamaah Pemuda Persis Cirengit",
     "allRightsReserved": "Hak cipta dilindungi undang-undang.",
     "copyright": "© {year} {organization}. {allRightsReserved}"
+  },
+  "notifications": {
+    "title": "Pemberitahuan",
+    "subtitle": "Tetap terhubung dengan agenda kegiatan, pengingat presensi, dan pengumuman resmi",
+    "empty": "Belum ada pemberitahuan",
+    "emptyUnread": "Tidak ada pemberitahuan yang belum dibaca",
+    "markAllRead": "Tandai semua telah dibaca",
+    "markAsRead": "Tandai telah dibaca",
+    "viewAll": "Lihat semua pemberitahuan",
+    "settings": "Pengaturan Pemberitahuan",
+    "settingsSubtitle": "Atur cara dan waktu Anda menerima pengingat kegiatan, presensi, dan pengumuman",
+    "inAppChannel": "Kanal Aplikasi",
+    "pushChannel": "Notifikasi Push",
+    "savePreferences": "Simpan Pengaturan",
+    "saving": "Menyimpan...",
+    "preferencesSaved": "Pengaturan pemberitahuan berhasil disimpan",
+    "preferencesError": "Gagal memperbarui pengaturan pemberitahuan",
+    "tabs": {
+      "all": "Semua",
+      "unread": "Belum Dibaca"
+    },
+    "categories": {
+      "activity_reminder": {
+        "title": "Pengingat Kegiatan",
+        "description": "Pemberitahuan agenda kajian dan kegiatan mendatang"
+      },
+      "attendance_opened": {
+        "title": "Presensi Dibuka",
+        "description": "Pemberitahuan saat sesi presensi kegiatan mulai dibuka"
+      },
+      "attendance_closing_soon": {
+        "title": "Presensi Segera Ditutup",
+        "description": "Peringatan mendesak saat waktu presensi tersisa kurang dari 30 menit"
+      },
+      "attendance_not_submitted": {
+        "title": "Presensi Belum Tercatat",
+        "description": "Pengingat jika Anda belum melakukan presensi kegiatan yang sedang berlangsung"
+      },
+      "activity_updated": {
+        "title": "Perubahan Kegiatan",
+        "description": "Pemberitahuan perubahan jadwal, lokasi, atau materi kegiatan"
+      },
+      "admin_announcement": {
+        "title": "Pengumuman Resmi",
+        "description": "Maklumat, buletin pimpinan, dan pengumuman resmi organisasi"
+      },
+      "attendance_status": {
+        "title": "Status Presensi",
+        "description": "Hasil verifikasi dan perubahan status kehadiran Anda"
+      },
+      "profile_reminder": {
+        "title": "Kelengkapan Profil",
+        "description": "Pengingat berkala untuk melengkapi data kontak dan profil anggota"
+      }
+    }
   }
 }
