@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { PageHeader } from "@/components/shared/page-header";
 import { NotificationPreferencesForm } from "@/features/notifications/components/notification-preferences-form";
+import { WebPushToggle } from "@/features/notifications/push/components/web-push-toggle";
 import { auth } from "@/lib/auth";
 import { PERMISSIONS } from "@/lib/permissions";
 import { getUserPermissions } from "@/server/dal/auth";
@@ -29,6 +30,7 @@ export default async function NotificationSettingsPage() {
   return (
     <div className="space-y-6">
       <PageHeader title={t("settings")} description={t("settingsSubtitle")} />
+      <WebPushToggle />
       <NotificationPreferencesForm initialPreferences={preferences} />
     </div>
   );

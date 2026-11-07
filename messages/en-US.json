@@ -829,6 +829,16 @@
     "saving": "Saving...",
     "preferencesSaved": "Notification preferences updated successfully",
     "preferencesError": "Failed to update notification preferences",
+    "webPushTitle": "Web Push Notifications",
+    "webPushDescription": "Receive real-time push alerts on this device even when the browser is in the background",
+    "enableWebPush": "Enable Web Push Notifications",
+    "webPushNotSupported": "Web push notifications are not supported by this browser.",
+    "webPushPermissionDenied": "Push notifications are blocked in your browser settings.",
+    "webPushSubscribed": "Web push notifications enabled successfully.",
+    "webPushUnsubscribed": "Web push notifications disabled.",
+    "sendTestPush": "Send Test Notification",
+    "testPushSent": "Test notification sent to your devices.",
+    "testPushError": "Failed to send test notification.",
     "tabs": {
       "all": "All",
       "unread": "Unread"

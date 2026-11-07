@@ -829,6 +829,16 @@
     "saving": "Menyimpan...",
     "preferencesSaved": "Pengaturan pemberitahuan berhasil disimpan",
     "preferencesError": "Gagal memperbarui pengaturan pemberitahuan",
+    "webPushTitle": "Notifikasi Web Push",
+    "webPushDescription": "Terima pemberitahuan langsung pada perangkat ini meskipun browser berjalan di latar belakang",
+    "enableWebPush": "Aktifkan Notifikasi Web Push",
+    "webPushNotSupported": "Notifikasi web push tidak didukung oleh browser ini.",
+    "webPushPermissionDenied": "Izin notifikasi diblokir di pengaturan browser Anda.",
+    "webPushSubscribed": "Notifikasi web push berhasil diaktifkan.",
+    "webPushUnsubscribed": "Notifikasi web push dinonaktifkan.",
+    "sendTestPush": "Kirim Notifikasi Uji",
+    "testPushSent": "Notifikasi uji berhasil dikirim ke perangkat Anda.",
+    "testPushError": "Gagal mengirim notifikasi uji.",
     "tabs": {
       "all": "Semua",
       "unread": "Belum Dibaca"
