@@ -40,6 +40,14 @@ const nextConfig: NextConfig = {
         source: "/dashboard/my-profile",
         destination: "/my-profile",
       },
+      {
+        source: "/dashboard/notifications",
+        destination: "/notifications",
+      },
+      {
+        source: "/dashboard/notifications/settings",
+        destination: "/notifications/settings",
+      },
     ];
   },
 };
