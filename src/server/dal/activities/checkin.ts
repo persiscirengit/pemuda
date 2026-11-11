@@ -204,7 +204,7 @@ export async function submitMemberCheckIn(
       throw new Error("Attendance has already been recorded for this activity.");
     }
 
-    // Update existing record (e.g. was 'absent' or unreviewed 'need_verification')
+    // Update existing record (e.g. was 'absent' or pending 'need_verification')
     await db
       .update(attendanceRecords)
       .set({

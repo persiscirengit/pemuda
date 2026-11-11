@@ -318,6 +318,7 @@
       "noSchedule": "Kegiatan insidental (tanpa template jadwal)",
       "statusLabel": "Status Kegiatan",
       "changeStatusButton": "Ubah Status",
+      "viewQrButton": "Tampilkan Kode QR",
       "attendanceEnabledLabel": "Aktifkan Presensi Mandiri",
       "attendanceTokenLabel": "Token Presensi",
       "attendanceWindowLabel": "Jendela Waktu Presensi",
@@ -876,6 +877,69 @@
         "title": "Kelengkapan Profil",
         "description": "Pengingat berkala untuk melengkapi data kontak dan profil anggota"
       }
+    }
+  },
+  "attendance": {
+    "qr": {
+      "title": "Kode QR Kegiatan",
+      "subtitle": "Cetak atau proyeksikan kode QR ini agar peserta dapat melakukan presensi",
+      "backToActivity": "Kembali ke Kegiatan",
+      "printQr": "Cetak Kode QR",
+      "regenerate": "Rotasi Token QR",
+      "regenerateConfirmTitle": "Rotasi Token QR Presensi?",
+      "regenerateConfirmDesc": "Membuat token baru akan membatalkan kode QR sebelumnya. Hanya peserta yang memindai kode terbaru yang dapat hadir.",
+      "regenerateButton": "Rotasi Token Sekarang",
+      "regenerating": "Memperbarui Token...",
+      "regeneratedSuccess": "Token presensi berhasil diperbarui",
+      "venueLabel": "Lokasi",
+      "dateLabel": "Tanggal",
+      "timeLabel": "Waktu",
+      "windowLabel": "Jendela Presensi",
+      "targetUrlLabel": "URL Langsung",
+      "liveClockTitle": "Waktu Sistem Realtime",
+      "openStatus": "Presensi Terbuka",
+      "closedStatus": "Presensi Ditutup",
+      "notOpenStatus": "Presensi Belum Dibuka"
+    },
+    "checkin": {
+      "pageTitle": "Presensi Lapangan Kegiatan",
+      "pageSubtitle": "Kirim konfirmasi kehadiran atau ajukan permohonan izin",
+      "tabs": {
+        "checkin": "Hadir (Check-In)",
+        "permission": "Permohonan Izin"
+      },
+      "alreadyRecordedTitle": "Presensi Sudah Tercatat",
+      "alreadyRecordedDesc": "Anda telah mencatat kehadiran atau permohonan izin untuk kegiatan ini.",
+      "windowClosedTitle": "Jendela Presensi Ditutup",
+      "windowClosedDesc": "Waktu presensi untuk kegiatan ini telah berakhir.",
+      "windowNotOpenTitle": "Presensi Belum Dibuka",
+      "windowNotOpenDesc": "Waktu presensi untuk kegiatan ini dijadwalkan akan segera dibuka.",
+      "unlinkedTitle": "Akun Belum Tertaut",
+      "unlinkedDesc": "Akun pengguna Anda belum ditautkan ke data anggota. Silakan hubungi administrator.",
+      "activityInfoTitle": "Informasi Kegiatan",
+      "gpsSectionTitle": "Verifikasi Geofence GPS",
+      "gpsSectionDesc": "Koordinat Anda diverifikasi terhadap radius venue kegiatan.",
+      "requestingLocation": "Meminta izin lokasi perangkat...",
+      "locationRetrieved": "Lokasi berhasil didapatkan",
+      "locationDenied": "Izin lokasi ditolak. Harap izinkan akses lokasi di pengaturan browser untuk memverifikasi jarak geofence.",
+      "locationUnavailable": "Koordinat lokasi tidak tersedia dari GPS perangkat.",
+      "locationTimeout": "Permintaan lokasi waktu habis. Silakan coba lagi.",
+      "refreshLocation": "Perbarui Koordinat GPS",
+      "distanceLabel": "Jarak dari lokasi kegiatan",
+      "accuracyLabel": "Akurasi GPS",
+      "withinRadius": "Dalam radius ({radius}m)",
+      "outsideRadius": "Di luar radius (Memerlukan verifikasi pengurus)",
+      "submitCheckInButton": "Konfirmasi Presensi Lapangan",
+      "checkingIn": "Mengirim Presensi...",
+      "checkInSuccessValid": "Presensi berhasil! Kehadiran Anda terkonfirmasi valid.",
+      "checkInSuccessNeedVerification": "Presensi terkirim! Jarak Anda di luar radius kegiatan dan memerlukan verifikasi pengurus.",
+      "reasonLabel": "Alasan Ketidakhadiran (Izin)",
+      "reasonPlaceholder": "Jelaskan alasan Anda berhalangan hadir (maksimal 500 karakter)...",
+      "reasonRequired": "Alasan permohonan izin wajib diisi.",
+      "reasonMaxLength": "Alasan tidak boleh melebihi 500 karakter.",
+      "submitAbsenceButton": "Kirim Permohonan Izin",
+      "submittingAbsence": "Mengirim Izin...",
+      "absenceSuccess": "Permohonan izin berhasil dikirimkan."
     }
   }
 }

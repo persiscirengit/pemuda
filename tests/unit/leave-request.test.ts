@@ -204,7 +204,7 @@ describe("Member Absence / Leave Request DAL (src/server/dal/activities/checkin.
     await expect(
       submitMemberPermission(
         "valid-token-12345",
-        { reason: "Sakit flu dan demam" },
+        { reason: "Flu and high fever" },
         mockMemberSession,
       ),
     ).rejects.toThrow(/not linked to any member/i);
@@ -220,7 +220,7 @@ describe("Member Absence / Leave Request DAL (src/server/dal/activities/checkin.
     await expect(
       submitMemberPermission(
         "valid-token-12345",
-        { reason: "Sakit flu dan demam" },
+        { reason: "Flu and high fever" },
         mockMemberSession,
       ),
     ).rejects.toThrow(/closed/i);
@@ -233,13 +233,13 @@ describe("Member Absence / Leave Request DAL (src/server/dal/activities/checkin.
 
     const record = await submitMemberPermission(
       "valid-token-12345",
-      { reason: "Ada tugas kantor mendadak di luar kota" },
+      { reason: "Urgent work trip out of town" },
       mockMemberSession,
     );
 
     expect(record.status).toBe("permission");
     expect(record.verificationStatus).toBe("valid");
-    expect(record.notes).toBe("Ada tugas kantor mendadak di luar kota");
+    expect(record.notes).toBe("Urgent work trip out of town");
     expect(record.latitude).toBeNull();
     expect(record.longitude).toBeNull();
   });

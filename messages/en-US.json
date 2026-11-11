@@ -318,6 +318,7 @@
       "noSchedule": "Incidental activity (no blueprint schedule)",
       "statusLabel": "Activity Status",
       "changeStatusButton": "Change Status",
+      "viewQrButton": "Display QR Code",
       "attendanceEnabledLabel": "Enable Self-Attendance",
       "attendanceTokenLabel": "Attendance Token",
       "attendanceWindowLabel": "Attendance Check-In Window",
@@ -876,6 +877,69 @@
         "title": "Profile Completion Reminders",
         "description": "Periodic prompts to complete required roster contact and personal info"
       }
+    }
+  },
+  "attendance": {
+    "qr": {
+      "title": "Activity QR Code",
+      "subtitle": "Print or project this QR code for participants to check in",
+      "backToActivity": "Back to Activity",
+      "printQr": "Print QR Code",
+      "regenerate": "Rotate QR Token",
+      "regenerateConfirmTitle": "Rotate Attendance QR Token?",
+      "regenerateConfirmDesc": "Regenerating the token invalidates previous QR codes. Only participants using the new code can check in.",
+      "regenerateButton": "Rotate Token Now",
+      "regenerating": "Rotating Token...",
+      "regeneratedSuccess": "Attendance token rotated successfully",
+      "venueLabel": "Venue",
+      "dateLabel": "Date",
+      "timeLabel": "Time",
+      "windowLabel": "Check-In Window",
+      "targetUrlLabel": "Direct URL",
+      "liveClockTitle": "Live System Clock",
+      "openStatus": "Check-In Open",
+      "closedStatus": "Check-In Closed",
+      "notOpenStatus": "Check-In Not Yet Open"
+    },
+    "checkin": {
+      "pageTitle": "Activity Field Check-In",
+      "pageSubtitle": "Submit your attendance or request an excused absence",
+      "tabs": {
+        "checkin": "Present (Check-In)",
+        "permission": "Excused Absence"
+      },
+      "alreadyRecordedTitle": "Attendance Already Recorded",
+      "alreadyRecordedDesc": "You have already recorded your presence or excused absence for this activity.",
+      "windowClosedTitle": "Attendance Window Closed",
+      "windowClosedDesc": "The check-in window for this activity has expired.",
+      "windowNotOpenTitle": "Attendance Not Yet Open",
+      "windowNotOpenDesc": "The check-in window for this activity is scheduled to open soon.",
+      "unlinkedTitle": "Account Not Linked",
+      "unlinkedDesc": "Your user account is not linked to any member record. Please contact the administrator.",
+      "activityInfoTitle": "Activity Information",
+      "gpsSectionTitle": "GPS Geofence Verification",
+      "gpsSectionDesc": "Your coordinates are verified against the activity venue radius.",
+      "requestingLocation": "Requesting location permission...",
+      "locationRetrieved": "Location retrieved successfully",
+      "locationDenied": "Location permission denied. Please allow location access in your browser settings to verify geofence distance.",
+      "locationUnavailable": "Location coordinates unavailable from device GPS.",
+      "locationTimeout": "Location request timed out. Please retry.",
+      "refreshLocation": "Refresh GPS Coordinates",
+      "distanceLabel": "Distance from venue",
+      "accuracyLabel": "GPS Accuracy",
+      "withinRadius": "Within radius ({radius}m)",
+      "outsideRadius": "Outside radius (Requires administrative review)",
+      "submitCheckInButton": "Confirm Field Check-In",
+      "checkingIn": "Submitting Check-In...",
+      "checkInSuccessValid": "Check-in successful! Your attendance is confirmed valid.",
+      "checkInSuccessNeedVerification": "Check-in submitted! Your distance is outside venue radius and requires administrator verification.",
+      "reasonLabel": "Absence Justification Reason",
+      "reasonPlaceholder": "Explain why you cannot attend this activity (max 500 characters)...",
+      "reasonRequired": "Absence justification reason is required.",
+      "reasonMaxLength": "Reason cannot exceed 500 characters.",
+      "submitAbsenceButton": "Submit Excused Absence",
+      "submittingAbsence": "Submitting Absence...",
+      "absenceSuccess": "Excused absence submitted successfully."
     }
   }
 }
