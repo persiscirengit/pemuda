@@ -79,7 +79,9 @@ export function TokenRegenerateDialog({
             <RefreshCw
               className={`mr-2 size-4 ${submitting ? "animate-spin" : ""}`}
             />
-            <span>{submitting ? t("regenerating") : t("regenerateButton")}</span>
+            <span>
+              {submitting ? t("regenerating") : t("regenerateButton")}
+            </span>
           </Button>
         </DialogFooter>
       </DialogContent>

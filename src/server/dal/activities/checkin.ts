@@ -6,10 +6,9 @@ import { headers } from "next/headers";
 import { v7 as uuidv7 } from "uuid";
 import { db } from "@/db";
 import {
-  activities,
-  type Activity,
-  attendanceRecords,
   type AttendanceRecord,
+  activities,
+  attendanceRecords,
 } from "@/db/schema/activities";
 import { users } from "@/db/schema/auth";
 import { auth } from "@/lib/auth";
@@ -139,9 +138,8 @@ export async function submitMemberCheckIn(
     sessionOverride ?? undefined,
   );
 
-  const { session, memberId } = await resolveCheckInMemberContext(
-    sessionOverride,
-  );
+  const { session, memberId } =
+    await resolveCheckInMemberContext(sessionOverride);
 
   // 1. Fetch activity by attendanceToken
   const [activity] = await db
@@ -150,7 +148,7 @@ export async function submitMemberCheckIn(
     .where(eq(activities.attendanceToken, token))
     .limit(1);
 
-  if (!activity || !activity.attendanceEnabled) {
+  if (!activity?.attendanceEnabled) {
     throw new Error("Invalid activity token or attendance is disabled.");
   }
 
@@ -159,7 +157,10 @@ export async function submitMemberCheckIn(
   if (activity.attendanceOpenAt && now < new Date(activity.attendanceOpenAt)) {
     throw new Error("Attendance window is not yet open.");
   }
-  if (activity.attendanceCloseAt && now > new Date(activity.attendanceCloseAt)) {
+  if (
+    activity.attendanceCloseAt &&
+    now > new Date(activity.attendanceCloseAt)
+  ) {
     throw new Error("Attendance window is closed.");
   }
 
@@ -201,7 +202,9 @@ export async function submitMemberCheckIn(
       (existingRecord.status === "permission" &&
         existingRecord.verificationStatus === "valid")
     ) {
-      throw new Error("Attendance has already been recorded for this activity.");
+      throw new Error(
+        "Attendance has already been recorded for this activity.",
+      );
     }
 
     // Update existing record (e.g. was 'absent' or pending 'need_verification')
@@ -289,9 +292,8 @@ export async function submitMemberPermission(
     sessionOverride ?? undefined,
   );
 
-  const { session, memberId } = await resolveCheckInMemberContext(
-    sessionOverride,
-  );
+  const { session, memberId } =
+    await resolveCheckInMemberContext(sessionOverride);
 
   // 1. Fetch activity by attendanceToken
   const [activity] = await db
@@ -300,7 +302,7 @@ export async function submitMemberPermission(
     .where(eq(activities.attendanceToken, token))
     .limit(1);
 
-  if (!activity || !activity.attendanceEnabled) {
+  if (!activity?.attendanceEnabled) {
     throw new Error("Invalid activity token or attendance is disabled.");
   }
 
@@ -309,7 +311,10 @@ export async function submitMemberPermission(
   if (activity.attendanceOpenAt && now < new Date(activity.attendanceOpenAt)) {
     throw new Error("Attendance window is not yet open.");
   }
-  if (activity.attendanceCloseAt && now > new Date(activity.attendanceCloseAt)) {
+  if (
+    activity.attendanceCloseAt &&
+    now > new Date(activity.attendanceCloseAt)
+  ) {
     throw new Error("Attendance window is closed.");
   }
 
@@ -399,7 +404,10 @@ export async function getActivityByAttendanceToken(
   let windowState: "open" | "notOpen" | "closed" | "disabled" = "disabled";
 
   if (activity.attendanceEnabled) {
-    if (activity.attendanceOpenAt && now < new Date(activity.attendanceOpenAt)) {
+    if (
+      activity.attendanceOpenAt &&
+      now < new Date(activity.attendanceOpenAt)
+    ) {
       windowState = "notOpen";
     } else if (
       activity.attendanceCloseAt &&

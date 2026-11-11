@@ -106,7 +106,9 @@ vi.mock("@/db", () => {
         return {
           values: (vals: Record<string, unknown>) => {
             if (tableName === "attendance_records") {
-              mockAttendanceRecords.push(vals as unknown as MockAttendanceRecord);
+              mockAttendanceRecords.push(
+                vals as unknown as MockAttendanceRecord,
+              );
             }
             return {
               returning: () => {
@@ -199,7 +201,10 @@ describe("Member Absence / Leave Request DAL (src/server/dal/activities/checkin.
       "@/server/dal/activities/checkin"
     );
 
-    mockUsers[0]!.memberId = null;
+    const user = mockUsers[0];
+    if (user) {
+      user.memberId = null;
+    }
 
     await expect(
       submitMemberPermission(
@@ -215,7 +220,10 @@ describe("Member Absence / Leave Request DAL (src/server/dal/activities/checkin.
       "@/server/dal/activities/checkin"
     );
 
-    mockActivities[0]!.attendanceCloseAt = new Date(Date.now() - 3600000);
+    const act = mockActivities[0];
+    if (act) {
+      act.attendanceCloseAt = new Date(Date.now() - 3600000);
+    }
 
     await expect(
       submitMemberPermission(

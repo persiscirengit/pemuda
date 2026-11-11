@@ -2,8 +2,8 @@
 
 import { Check, Copy, MapPin, Printer, RefreshCw } from "lucide-react";
 import { useTranslations } from "next-intl";
-import * as React from "react";
 import { QRCodeSVG } from "qrcode.react";
+import * as React from "react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,14 +42,14 @@ export function QrDisplayCard({ activity, canManage }: QrDisplayCardProps) {
   const timeDisplay =
     activity.startTime && activity.endTime
       ? `${activity.startTime.slice(0, 5)} - ${activity.endTime.slice(0, 5)}`
-      : activity.startTime?.slice(0, 5) ?? null;
+      : (activity.startTime?.slice(0, 5) ?? null);
 
   const handleCopy = async () => {
     if (!checkInUrl) return;
     try {
       await navigator.clipboard.writeText(checkInUrl);
       setCopied(true);
-      toast.success(t("targetUrlLabel") + " copied");
+      toast.success(t("copiedUrl"));
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // Fallback
@@ -148,7 +148,9 @@ export function QrDisplayCard({ activity, canManage }: QrDisplayCardProps) {
 
             {activity.attendanceCloseAt && (
               <div className="flex justify-between pt-1">
-                <span className="text-muted-foreground">{t("windowLabel")}</span>
+                <span className="text-muted-foreground">
+                  {t("windowLabel")}
+                </span>
                 <span className="font-mono text-xs">
                   {new Date(activity.attendanceCloseAt).toLocaleTimeString([], {
                     hour: "2-digit",

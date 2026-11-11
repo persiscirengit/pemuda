@@ -110,6 +110,7 @@ tests/
   Expected: All 6 laws passed with 0 violations.
 
 - [ ] **Step 4: Commit Task 1**
+
   ```bash
   git add package.json pnpm-lock.yaml
   git commit -m "chore(deps): install geolib, qrcode.react, and react-qr-scanner at latest"
@@ -176,6 +177,7 @@ tests/
   Expected: PASS
 
 - [ ] **Step 5: Commit Task 2**
+
   ```bash
   git add tests/unit/checkin-geofence.test.ts src/server/dal/activities/checkin.ts
   git commit -m "feat(attendance): implement geofence check-in DAL with geolib distance calculations and unit tests"
@@ -221,6 +223,7 @@ tests/
   Expected: PASS
 
 - [ ] **Step 5: Commit Task 3**
+
   ```bash
   git add tests/unit/leave-request.test.ts src/server/dal/activities/checkin.ts
   git commit -m "feat(attendance): implement member absence request workflow and unit tests"
@@ -246,6 +249,7 @@ tests/
   - `regenerateAttendanceTokenAction`
 
 - [ ] **Step 1: Define Zod validation schemas in `src/features/activities/checkin/types.ts`**
+
   ```typescript
   export const checkInSchema = z.object({
     token: z.string().min(10).max(64),
@@ -276,6 +280,7 @@ tests/
   Expected: PASS
 
 - [ ] **Step 5: Commit Task 4**
+
   ```bash
   git add src/features/activities/checkin/types.ts src/features/activities/checkin/actions.ts src/features/activities/qr/actions.ts
   git commit -m "feat(attendance): create type-safe server actions for check-in, absence, and token rotation"
@@ -306,6 +311,7 @@ tests/
   Expected: Law 2 passes with 0 parity violations.
 
 - [ ] **Step 4: Commit Task 5**
+
   ```bash
   git add messages/en-US.json messages/id-ID.json
   git commit -m "feat(attendance): add localized UI messages for QR display and field check-in"
@@ -353,6 +359,7 @@ tests/
   Expected: PASS
 
 - [ ] **Step 7: Commit Task 6**
+
   ```bash
   git add src/features/activities/qr/ src/app/\(dashboard\)/activities/\[id\]/qr/ src/app/\(dashboard\)/activities/\[id\]/page.tsx
   git commit -m "feat(attendance): implement organizer activity QR display view with printable layout and token regeneration"
@@ -404,6 +411,7 @@ tests/
   Expected: PASS
 
 - [ ] **Step 7: Commit Task 7**
+
   ```bash
   git add src/features/activities/checkin/ src/app/attendance/check-in/\[token\]/page.tsx
   git commit -m "feat(attendance): implement mobile field check-in and leave request pages"
