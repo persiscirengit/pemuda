@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, RefreshCw } from "lucide-react";
+import { ArrowLeft, QrCode, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -32,6 +32,15 @@ export function ActivityDetailHeaderActions({
           <span>{tCommon("actions.back")}</span>
         </Link>
       </Button>
+
+      {activity.attendanceEnabled && activity.attendanceToken && (
+        <Button asChild variant="outline" size="sm">
+          <Link href={`/activities/${activity.id}/qr`}>
+            <QrCode className="mr-2 h-4 w-4" />
+            <span>{t("viewQrButton")}</span>
+          </Link>
+        </Button>
+      )}
 
       {canChangeStatus && (
         <>
