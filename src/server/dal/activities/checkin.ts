@@ -343,6 +343,10 @@ export async function submitMemberPermission(
       .where(eq(attendanceRecords.id, existingRecord.id))
       .returning();
 
+    if (!updated) {
+      throw new Error("Failed to update attendance record.");
+    }
+
     return updated;
   }
 
@@ -365,6 +369,10 @@ export async function submitMemberPermission(
       createdBy: session.user.id,
     })
     .returning();
+
+  if (!created) {
+    throw new Error("Failed to create attendance record.");
+  }
 
   return created;
 }

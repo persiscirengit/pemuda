@@ -91,19 +91,19 @@ vi.mock("@/db", () => {
           set: (vals: Record<string, unknown>) => {
             return {
               where: (_cond: unknown) => {
-                if (tableName === "activities" && mockActivities.length > 0) {
+                if (tableName === "activities" && mockActivities[0]) {
                   Object.assign(mockActivities[0], vals);
                 }
                 if (
                   tableName === "attendance_records" &&
-                  mockAttendanceRecords.length > 0
+                  mockAttendanceRecords[0]
                 ) {
                   Object.assign(mockAttendanceRecords[0], vals);
                 }
                 return {
                   returning: () => {
                     return Promise.resolve(
-                      mockAttendanceRecords.length > 0
+                      mockAttendanceRecords[0]
                         ? [mockAttendanceRecords[0]]
                         : [],
                     );
@@ -246,7 +246,7 @@ describe("Geofence Check-In DAL (src/server/dal/activities/checkin.ts)", () => {
       "@/server/dal/activities/checkin"
     );
 
-    mockUsers[0].memberId = null;
+    mockUsers[0]!.memberId = null;
 
     await expect(
       submitMemberCheckIn(
@@ -319,7 +319,7 @@ describe("Geofence Check-In DAL (src/server/dal/activities/checkin.ts)", () => {
       "@/server/dal/activities/checkin"
     );
 
-    mockActivities[0].attendanceOpenAt = new Date(Date.now() + 3600000); // 1 hour in future
+    mockActivities[0]!.attendanceOpenAt = new Date(Date.now() + 3600000); // 1 hour in future
 
     await expect(
       submitMemberCheckIn(
@@ -335,7 +335,7 @@ describe("Geofence Check-In DAL (src/server/dal/activities/checkin.ts)", () => {
       "@/server/dal/activities/checkin"
     );
 
-    mockActivities[0].attendanceCloseAt = new Date(Date.now() - 3600000); // 1 hour in past
+    mockActivities[0]!.attendanceCloseAt = new Date(Date.now() - 3600000); // 1 hour in past
 
     await expect(
       submitMemberCheckIn(
@@ -376,7 +376,7 @@ describe("Geofence Check-In DAL (src/server/dal/activities/checkin.ts)", () => {
     expect(updated.status).toBe("present");
 
     // 2. Reject if already present
-    mockAttendanceRecords[0].status = "present";
+    mockAttendanceRecords[0]!.status = "present";
     await expect(
       submitMemberCheckIn(
         "valid-token-12345",
@@ -396,6 +396,6 @@ describe("Geofence Check-In DAL (src/server/dal/activities/checkin.ts)", () => {
       mockAdminSession,
     );
     expect(result.attendanceToken).toHaveLength(64);
-    expect(mockActivities[0].attendanceToken).toBe(result.attendanceToken);
+    expect(mockActivities[0]!.attendanceToken).toBe(result.attendanceToken);
   });
 });

@@ -83,14 +83,14 @@ vi.mock("@/db", () => {
               where: (_cond: unknown) => {
                 if (
                   tableName === "attendance_records" &&
-                  mockAttendanceRecords.length > 0
+                  mockAttendanceRecords[0]
                 ) {
                   Object.assign(mockAttendanceRecords[0], vals);
                 }
                 return {
                   returning: () => {
                     return Promise.resolve(
-                      mockAttendanceRecords.length > 0
+                      mockAttendanceRecords[0]
                         ? [mockAttendanceRecords[0]]
                         : [],
                     );
@@ -199,7 +199,7 @@ describe("Member Absence / Leave Request DAL (src/server/dal/activities/checkin.
       "@/server/dal/activities/checkin"
     );
 
-    mockUsers[0].memberId = null;
+    mockUsers[0]!.memberId = null;
 
     await expect(
       submitMemberPermission(
@@ -215,7 +215,7 @@ describe("Member Absence / Leave Request DAL (src/server/dal/activities/checkin.
       "@/server/dal/activities/checkin"
     );
 
-    mockActivities[0].attendanceCloseAt = new Date(Date.now() - 3600000);
+    mockActivities[0]!.attendanceCloseAt = new Date(Date.now() - 3600000);
 
     await expect(
       submitMemberPermission(
